@@ -2,8 +2,14 @@ import phone from '../assets/phone.svg'
 import email from '../assets/email.svg'
 import locationIcon from "../assets/location.svg"
 import whatsapp from "../assets/whatsapp.svg"
+import { useEffect } from 'react'
 
 const ContactUs = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      })
+
   return (
     <section className="contactus">
         <div className="container">

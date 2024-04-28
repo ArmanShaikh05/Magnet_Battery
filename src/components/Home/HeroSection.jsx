@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import HeroRightImage from "../../assets/heroRightImg.png";
 
 const HeroSection = () => {
+
+  const navigate = useNavigate(); 
+
+  const handleContactClick = (e) => {
+    e.preventDefault
+    navigate("/contact")
+  }
+
   return (
     <div className="hero container">
       <div className="hero-data">
@@ -10,7 +19,7 @@ const HeroSection = () => {
         </div>
         <div className="hero-btns">
           <button className="btn">Explore store</button>
-          <button className="ghost-btn">contact us</button>
+          <button onClick={(e)=>handleContactClick(e)} className="ghost-btn">contact us</button>
         </div>
       </div>
       <img src={HeroRightImage} alt="hero Image" />

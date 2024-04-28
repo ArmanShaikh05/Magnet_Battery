@@ -50,7 +50,7 @@ const Navbar = () => {
 
         <div className="navlinks">
           <Link to="/">Home</Link>
-          <a href="#about">About us</a>
+          <a href="/#about">About us</a>
           <Link to={"/contact"}>Contact Us</Link>
           <button className="btn" onClick={(e)=>handleNavigate(e)} >Our Store</button>
         </div>

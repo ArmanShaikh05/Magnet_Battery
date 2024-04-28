@@ -5,8 +5,14 @@ import Branches from "../components/Home/Branches";
 import WhyChooseUs from "../components/Home/WhyChooseUs";
 import Testimonial from "../components/Home/Testimonial";
 import FaqSection from "../components/Home/FaqSection";
+import { useEffect } from "react";
 
 const HomePage = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  })
+
   return (
     <>
       <HeroSection />
