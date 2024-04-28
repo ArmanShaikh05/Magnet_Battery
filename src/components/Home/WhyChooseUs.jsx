@@ -15,7 +15,7 @@ const WhyChooseUs = () => {
                     <img src={bestPrices} alt="bestPrices" />
                     <div className="feature-text">
                         <h1>best Prices</h1>
-                        <p>WE ALWAYS PROVIDE OUR CUSTOMERS WITH BEST POSSIBLE PRICES AND YEAR-ROUND  VARIETY OF DISCOUNTS AND OFFERS</p>
+                        <p>WE ALWAYS PROVIDE OUR CUSTOMERS WITH BEST POSSIBLE PRICES AND YEAR-ROUND  VARIETY OF DISCOUNTS AND OFFERS.</p>
                     </div>
                 </div>
 
@@ -23,7 +23,7 @@ const WhyChooseUs = () => {
                     <img src={salesService} alt="bestPrices" />
                     <div className="feature-text">
                         <h1>BEST AFTER SALE SERVICES</h1>
-                        <p>CUSTOMER IS THE KING, THE THE PRINCIPLE WE ABIDE OURSELVES BY AND THAT’S WHY WE PROVIDE OUR CUSTOMERS WITH BEST AFTER SALE SERVCIES TO ENSURE MAXIMUM SATISFACTION</p>
+                        <p>CUSTOMER IS THE KING, THE PRINCIPLE WE ABIDE OURSELVES BY AND THAT’S WHY WE PROVIDE OUR CUSTOMERS WITH BEST AFTER SALE SERVCIES TO ENSURE MAXIMUM SATISFACTION.</p>
                     </div>
                 </div>
                 
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
                     <img src={goodStaff} alt="bestPrices" />
                     <div className="feature-text">
                         <h1>WELL TRAINED STAFF</h1>
-                        <p>OUR STAFF IS EQUIPPED WITH PROPER KNOWLEDGE AND TRAINING TO HELP OUR CUSTOMERS CHOOSE THE BEST POSSIBLE OPTION FOR THEIR NEED AND DEMAND</p>
+                        <p>OUR STAFF IS EQUIPPED WITH PROPER KNOWLEDGE AND TRAINING TO HELP OUR CUSTOMERS CHOOSE THE BEST POSSIBLE OPTION FOR THEIR NEED AND DEMAND.</p>
                     </div>
                 </div>
             </div>

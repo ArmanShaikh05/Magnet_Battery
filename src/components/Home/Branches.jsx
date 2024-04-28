@@ -26,7 +26,7 @@ const Branches = () => {
         <div className="branch-text">
           <h1>Branch 2</h1>
           <p>
-            Located in the heart of City , our second Branch at Ostwal Empire has helped and allowed us to serve more and more customerswith the best batteries and services. Opened in year 2019 , the  branch is equipped with a well trained staff and ample of options for all your needs and demands.
+            Located in the heart of City , our second Branch at Ostwal Empire has helped and allowed us to serve more and more customers with the best batteries and services. Opened in year 2019 , the  branch is equipped with a well trained staff and ample of options for all your needs and demands.
           </p>
           <p>
             <strong>Address:</strong> Satyam Apartment, F1/02, Ostwal Empire, Boisar(W), 401501

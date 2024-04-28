@@ -175,4 +175,12 @@ $btn-hover-color: #bfe385;
         margin: auto;
     }
 
+    .footer .container .footer-line-1 > p {
+        text-align: center;
+    }
+
+    .footer .container .footer-line-1 {
+        flex-direction: column;
+    }
+
 }
