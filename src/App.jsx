@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import {Toaster} from "react-hot-toast"
 import Loader from "./components/Loader";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -10,6 +11,7 @@ const Footer = lazy(() => import("./components/Footer"));
 function App() {
   return (
     <Router>
+      <Toaster />
       <Suspense fallback={<Loader />}>
       <Navbar />
         <Routes>

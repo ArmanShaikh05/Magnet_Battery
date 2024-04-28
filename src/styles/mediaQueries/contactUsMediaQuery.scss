@@ -1,5 +1,5 @@
 @media screen and (max-width:550px) {
-    .contactus > div > form {
+    .contactus > div > form .form-text-container{
         flex-direction: column;
         align-items: center;
         gap: 2.5rem;
@@ -13,6 +13,11 @@
     .contactus > div .form-btn {
         width: 80%;
     }
+
+    .contactus > div form .form-btn {
+        width: 80%;
+    }
+    
 }
 
 @media screen and (max-width:500px) {
@@ -32,12 +37,16 @@
 }
 
 @media screen and (max-width:450px) {
-    .contactus > div > form .left-form-section, .contactus > div > form .right-form-section {
+    .contactus > div > form .form-text-container  .left-form-section, .contactus > div > form .form-text-container .right-form-section {
         width: 95%;
     }
 
 
     .contactus > div .form-btn {
+        width: 95%;
+    }
+
+    .contactus > div form .form-btn {
         width: 95%;
     }
 }
