@@ -1,0 +1,43 @@
+@media screen and (max-width:550px) {
+    .contactus > div > form {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+
+        .left-form-section,.right-form-section{
+            width: 80%;
+            margin: 0;
+        }
+    }
+
+    .contactus > div .form-btn {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .contactus > div .contact-details {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contactus > div .address > p {
+        width: 20.5rem;
+    }
+
+    .contactus > div > h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .contactus > div > form .left-form-section, .contactus > div > form .right-form-section {
+        width: 95%;
+    }
+
+
+    .contactus > div .form-btn {
+        width: 95%;
+    }
+}

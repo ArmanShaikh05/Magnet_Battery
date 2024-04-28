@@ -59,6 +59,11 @@ $btn-hover-color: #bfe385;
     }
 }
 
+@media screen and (max-width: 650px) {
+    .faq > div .faq-container .faq-box .showAnswer {
+        height: 15rem;
+    }        
+}
 
 @media screen and (max-width: 550px) {
     .features > div .features-container .feature-box {
@@ -109,6 +114,10 @@ $btn-hover-color: #bfe385;
         width: 7.3rem;
     }
 
+    .navbar-container {
+        padding-inline: 2rem;
+    }
+
     .hamburger-menu{
         display: block;
     }
@@ -147,19 +156,10 @@ $btn-hover-color: #bfe385;
     }
 }
 
-@media screen and (max-width: 650px) {
-    .faq > div .faq-container .faq-box .showAnswer {
-        height: 15rem;
-    }        
-}
 
 @media screen and (max-width: 450px) {
     .container{
      padding: 0 0.5rem;
-    }
-
-    .navbar-container{
-        padding-inline: 2rem;
     }
 
     .faq > div .faq-container .faq-box .showAnswer {
