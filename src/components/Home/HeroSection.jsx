@@ -9,6 +9,10 @@ const HeroSection = () => {
     e.preventDefault
     navigate("/contact")
   }
+  const handleStoreClick = (e) => {
+    e.preventDefault
+    navigate("/store")
+  }
 
   return (
     <div className="hero container">
@@ -18,7 +22,7 @@ const HeroSection = () => {
           <p>Powering your life, on the road and at home since 2007.</p>
         </div>
         <div className="hero-btns">
-          <button className="btn">Explore store</button>
+          <button onClick={(e)=>handleStoreClick(e)} className="btn">Explore store</button>
           <button onClick={(e)=>handleContactClick(e)} className="ghost-btn">contact us</button>
         </div>
       </div>
