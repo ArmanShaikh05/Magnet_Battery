@@ -184,14 +184,14 @@
         }
 
         .service-box-container{
-            height: 9rem;
+            height: max-content;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             >.service-box{
-                height: 6.75rem;
+                min-height: 6.75rem;
                 width: max-content;
                 display: flex;
                 flex-direction: column;

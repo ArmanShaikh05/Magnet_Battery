@@ -25,20 +25,18 @@ const ContactUs = () => {
     formData.append("Message",message)
     formData.append("access_key", "eebf6190-2ba3-4efe-924f-929e159dd3ce");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
+
+    toast.promise(
+      fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      toast.success("Message Sent Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      toast.error(data.message);
+    }),{
+      loading:"Sending Message..",
+      success: <b>Message Sent!</b>,
+     error: <b>Could Not Send Message!</b>,
     }
+    ).then(res =>res.json()).catch(err => console.log(err))
+
   };
 
   const handleChange = (e) =>{

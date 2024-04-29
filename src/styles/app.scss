@@ -169,9 +169,11 @@ section{
 // IMPORTING STYLES
 @import '../styles/hompage.scss';
 @import '../styles/contactus.scss';
+@import '../styles/store.scss';
 
 
 // IMORTING MEDIA QUERIES
 @import './mediaQueries/homeMediaQuery.scss';
 @import './mediaQueries/contactUsMediaQuery.scss';
+@import './mediaQueries/storeMediaQuery.scss';
 

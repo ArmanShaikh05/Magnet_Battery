@@ -5,6 +5,7 @@ import Loader from "./components/Loader";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
+const Store = lazy(() => import("./pages/Store"));
 const Navbar = lazy(() => import("./components/Navbar"));
 const Footer = lazy(() => import("./components/Footer"));
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/store" element={<Store />} />
         </Routes>
       <Footer />
       </Suspense>
