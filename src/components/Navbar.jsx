@@ -33,6 +33,7 @@ const Navbar = () => {
     e.preventDefault();
     setShowSidebar(false)
     navigate("/store")
+    window.scrollTo(0,0)
     unCheckRadioBtns()
   };
 
@@ -71,8 +72,8 @@ const Navbar = () => {
           <div className="sidebar-links">
           <Link onClick={()=>setShowSidebar(false)} to="/">Home</Link>
             <a onClick={()=>setShowSidebar(false)} href="/#about">About us</a>
-            <Link onClick={()=>setShowSidebar(false)} to={"/contact"}>Contact Us</Link>
-            <button className="btn" onClick={(e)=>handleNavigate(e)} >Our Store</button>
+            <Link onClick={()=>{window.scrollTo(0,0);setShowSidebar(false)}} to={"/contact"}>Contact Us</Link>
+            <button className="btn" onClick={(e)=>{window.scrollTo(0,0);handleNavigate(e)}} >Our Store</button>
           </div>
           </div>
         
