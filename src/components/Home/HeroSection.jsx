@@ -22,8 +22,8 @@ const HeroSection = () => {
           <p>Powering your life, on the road and at home since 2007.</p>
         </div>
         <div className="hero-btns">
-          <button onClick={(e)=>handleStoreClick(e)} className="btn">Explore store</button>
-          <button onClick={(e)=>handleContactClick(e)} className="ghost-btn">contact us</button>
+          <button onClick={(e)=>{window.scrollTo(0,0);handleStoreClick(e)}} className="btn">Explore store</button>
+          <button onClick={(e)=>{window.scrollTo(0,0);handleContactClick(e)}} className="ghost-btn">contact us</button>
         </div>
       </div>
       <img src={HeroRightImage} alt="hero Image" />
