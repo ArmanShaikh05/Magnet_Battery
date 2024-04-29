@@ -64,7 +64,7 @@
                     outline: none;
                     border-radius: 0.5rem 0 0 0.5rem;
                     padding-inline: 1rem;
-                    font-size: 0.85rem;
+                    font-size: 0.95rem;
                     font-family: "Inter",sans-serif;
 
                     &:active, &:focus{
@@ -112,6 +112,7 @@
                     font-weight: 600;
                     font-size: 0.8rem;
                     text-transform: uppercase;
+                    background-color: $white;
                 }
             }
         }
