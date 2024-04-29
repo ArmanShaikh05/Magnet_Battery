@@ -1,0 +1,31 @@
+@media screen and (max-width:575px) {
+    .single-item .single-item-container .go-back-btn button {
+        width: 25%;
+        font-size: 1.5rem;
+    }
+
+    .single-item .single-item-container .item-img {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .single-item .single-item-container .item-price-details .baseprice-row .baseprice {
+        width: 60%;
+        padding: 0.8rem 0 0.8rem 4rem;
+    }
+
+    .single-item .single-item-container .item-price-details .baseprice-row .price {
+        width: 40%;
+        padding: 0.8rem 0.5rem 0.8rem 4rem;
+    }
+
+    .single-item .single-item-container .go-back-btn button {
+        width: 35%;
+        font-size: 1.5rem;
+    }
+
+    .single-item .single-item-container .return-details-box .return-statement > img {
+        width: 15%;
+    }
+}

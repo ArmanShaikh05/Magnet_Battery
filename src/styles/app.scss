@@ -19,6 +19,7 @@
 $primary-color:#AAD464;
 $primary-light-variant: #DBECBC;
 $primary-dark-variant: #BBD491;
+$primary-extra-dark-variant:#729b2b;
 $white: #FFFFFF;
 $black:black;
 $light-gray:#EFF3F1;
@@ -170,10 +171,12 @@ section{
 @import '../styles/hompage.scss';
 @import '../styles/contactus.scss';
 @import '../styles/store.scss';
+@import '../styles/singleItem.scss';
 
 
 // IMORTING MEDIA QUERIES
 @import './mediaQueries/homeMediaQuery.scss';
 @import './mediaQueries/contactUsMediaQuery.scss';
 @import './mediaQueries/storeMediaQuery.scss';
+@import './mediaQueries/singleItemMediaQuery.scss';
 

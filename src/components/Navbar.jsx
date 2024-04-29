@@ -24,10 +24,16 @@ const Navbar = () => {
     };
   });
 
+  const unCheckRadioBtns = () => {
+    let allRadioBtns = document.querySelectorAll('.radio-btns')
+    allRadioBtns.forEach((value)=> value.checked = false)
+  }
+
   const handleNavigate = (e) => {
     e.preventDefault();
     setShowSidebar(false)
-    navigate("/store");
+    navigate("/store")
+    unCheckRadioBtns()
   };
 
   const handleShowSidebarEvent = (e) => {

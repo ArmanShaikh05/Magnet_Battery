@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom"
 import amaronBattery from "../../assets/amaronBattery.png"
 
 const StoreItem = () => {
+  const navigate = useNavigate()
   return (
     <div className="store-item">
         <div className="store-item-img"><img src={amaronBattery} alt="amaronBattery" /></div>
@@ -13,7 +15,7 @@ const StoreItem = () => {
             </div>
             <div className="compatible-vehicles">
                 <p><strong>Compatible with - </strong>Bajaj Avenger, Honda Shine, Activa </p>
-                <button className="btn">View details</button>
+                <button onClick={()=>{window.scrollTo(0,0),navigate('/single-item')}}  className="btn">View details</button>
             </div>
         </div>
     </div>

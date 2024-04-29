@@ -4,27 +4,28 @@ import heavyVehicle from "../assets/heavyVehicle.svg";
 import passengerVehicle from "../assets/PassengerVehicle.svg";
 import inverter from "../assets/inverterBattery.svg";
 import searchIcon from "../assets/searchIcon.svg";
-import StoreItem from "../components/store/StoreItem";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Store = () => {
+  const navigate = useNavigate()
   return (
     <div className="store-page">
       <div className="services store">
         <div className="container">
           <h1 className="underlined-text">Looking For</h1>
           <div className="store-container service-box-container ">
-            <input type="radio" name="storeItemCategory" id="twowheeler" />
+            <input type="radio" className="radio-btns" name="storeItemCategory" id="twowheeler" />
             <label
               htmlFor="twowheeler"
-              onClick={() => console.log("clicked")}
+              onClick={() => navigate("twoWheelers")}
               className="service-box store-cat"
             >
               <img src={twoWheeler} alt="" />
               <p>Two Wheelers</p>
             </label>
 
-            <input type="radio" name="storeItemCategory" id="threeWheeler" />
-            <label htmlFor="threeWheeler" className="service-box store-cat">
+            <input type="radio" className="radio-btns" name="storeItemCategory" id="threeWheeler" />
+            <label htmlFor="threeWheeler"  onClick={() => navigate("threeWheelers")} className="service-box store-cat">
               <img src={threeWheeler} alt="" />
               <p>Three Wheelers</p>
             </label>
@@ -33,20 +34,21 @@ const Store = () => {
               type="radio"
               name="storeItemCategory"
               id="passengerVehicle"
+              className="radio-btns"
             />
-            <label htmlFor="passengerVehicle" className="service-box store-cat">
+            <label htmlFor="passengerVehicle" onClick={() => navigate("passengerVehicles")} className="service-box store-cat">
               <img src={passengerVehicle} alt="" />
               <p>Passenger Vehicles</p>
             </label>
 
-            <input type="radio" name="storeItemCategory" id="heavyVehicle" />
-            <label htmlFor="heavyVehicle" className="service-box store-cat">
+            <input type="radio" className="radio-btns" name="storeItemCategory" id="heavyVehicle" />
+            <label htmlFor="heavyVehicle" onClick={() => navigate("heavyVehicles")} className="service-box store-cat">
               <img src={heavyVehicle} alt="" />
               <p>Heavy Vehicles</p>
             </label>
 
-            <input type="radio" name="storeItemCategory" id="inverter" />
-            <label htmlFor="inverter" className="service-box store-cat">
+            <input type="radio" className="radio-btns" name="storeItemCategory" id="inverter" />
+            <label htmlFor="inverter" onClick={() => navigate("inverterBattery")} className="service-box store-cat">
               <img src={inverter} alt="" />
               <p>Inverter & Battery</p>
             </label>
@@ -86,9 +88,7 @@ const Store = () => {
       </div>
 
       <div className="container store-item-container">
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
+        <Outlet />
       </div>
     </div>
   );
