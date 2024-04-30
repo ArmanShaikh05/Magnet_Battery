@@ -1,0 +1,104 @@
+.btn{
+    background-color: #AAD464;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem ;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    word-spacing: 4px;
+}
+
+.store-btns{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.manage-btns{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5rem;
+
+    .delete-btn{
+        background-color: #F04747;
+        color: white;
+
+        &:hover{
+            background-color: #F47C7C;
+            color: white;
+        }
+    }
+}
+
+
+// STYLING THE DELETE OVERLAY
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay-box {
+    height: 30%;
+    width: 95vw;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    gap: 1rem;
+    border-radius: 10px;
+    // color: white;
+    padding: 1rem;
+    background-color: $primary-light-variant;
+  }
+  
+  .overlay-data h4 {
+    font-weight: 300;
+    margin-top: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .overlay-buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .overlay-buttons .cancelBtn {
+    width: 30%;
+    height: 3rem;
+    border-radius: 15px;
+    color: black;
+    border: none;
+    outline: none;
+    background-color: rgb(209, 200, 200);
+    cursor: pointer;
+  }
+  
+  .overlay-buttons .deleteBtn {
+    width: 30%;
+    height: 3rem;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: $primary-color;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width:400px) {
+    .manage-btns {
+        justify-content: center;
+    }
+  }
+  

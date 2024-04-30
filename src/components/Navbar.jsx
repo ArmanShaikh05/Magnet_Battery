@@ -60,6 +60,7 @@ const Navbar = () => {
           <a href="/#about">About us</a>
           <Link to={"/contact"}>Contact Us</Link>
           <button className="btn" onClick={(e)=>handleNavigate(e)} >Our Store</button>
+          <button className="ghost-btn" onClick={()=>{window.scrollTo(0,0);navigate("manage-store")}} >Manage Store</button>
         </div>
 
         <svg onClick={(e)=>handleShowSidebarEvent(e)} className="hamburger-menu" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512">
@@ -73,6 +74,7 @@ const Navbar = () => {
           <Link onClick={()=>setShowSidebar(false)} to="/">Home</Link>
             <a onClick={()=>setShowSidebar(false)} href="/#about">About us</a>
             <Link onClick={()=>{window.scrollTo(0,0);setShowSidebar(false)}} to={"/contact"}>Contact Us</Link>
+            <Link onClick={()=>{window.scrollTo(0,0);setShowSidebar(false)}} to={"/manage-store"}>Manage Store</Link>
             <button className="btn" onClick={(e)=>{window.scrollTo(0,0);handleNavigate(e)}} >Our Store</button>
           </div>
           </div>

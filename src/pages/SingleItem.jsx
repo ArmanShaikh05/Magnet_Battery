@@ -62,10 +62,6 @@ const SingleItem = () => {
                 <p className="table-text">abr-pr-12apbtx50</p>
             </div>
             <div className="table-row">
-                <p className="table-heading">brand</p>
-                <p className="table-text">ap-btx50</p>
-            </div>
-            <div className="table-row">
                 <p className="table-heading">voltage (v)</p>
                 <p className="table-text">12</p>
             </div>

@@ -7,8 +7,9 @@ import inverter from "../assets/inverterBattery.svg";
 import searchIcon from "../assets/searchIcon.svg";
 import { Outlet, useNavigate } from "react-router-dom";
 
-const Store = () => {
+const ManageStore = () => {
   const navigate = useNavigate()
+//   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
   return (
     <div className="store-page">
       <div className="services store">
@@ -82,16 +83,19 @@ const Store = () => {
           </div>
 
 
-          <div className="filter-area">
-            <label>Choose Brand</label>
-            <select name="brands">
-              <option value="All">All</option>
-              <option value="Amaron">Amaron</option>
-              <option value="Exide">Exide</option>
-              <option value="PowerZone">PowerZone</option>
-              <option value="Luminous">Luminous</option>
-              <option value="Microtek">Microtek</option>
-            </select>
+          <div className="store-btns">
+              <div className="filter-area">
+                <label>Choose Brand</label>
+                <select name="brands">
+                  <option value="All">All</option>
+                  <option value="Amaron">Amaron</option>
+                  <option value="Exide">Exide</option>
+                  <option value="PowerZone">PowerZone</option>
+                  <option value="Luminous">Luminous</option>
+                  <option value="Microtek">Microtek</option>
+                </select>
+              </div>
+              <button className="btn" onClick={()=>{window.scrollTo(0,0);navigate('/add')}}>Add Item</button>
           </div>
 
           
@@ -106,4 +110,4 @@ const Store = () => {
   );
 };
 
-export default Store;
+export default ManageStore;

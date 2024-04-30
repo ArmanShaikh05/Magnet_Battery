@@ -35,10 +35,11 @@
     
         > .navlinks{
             width: 28rem;
-            width: 45%;
+            width: 80%;
             height: 100%;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: flex-end;
+            gap: 1.5rem;
             align-items: center;
     
             > a {
@@ -48,6 +49,12 @@
                 color: $black;
     
                 
+            }
+
+            .ghost-btn{
+                padding: 0.5rem 1rem;
+                font-size: 1.1rem;
+                border-radius: 0.5rem;
             }
         }
     }
@@ -63,12 +70,12 @@
     
 
     .inactive{
-        right:-40% !important
+        right:-60% !important
     }
 
     .sidebar{
         position: fixed;
-        width: 40%;
+        width: 60%;
         top: 0;
         right: 0;
         background-color: $primary-dark-variant;
