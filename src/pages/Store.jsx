@@ -60,7 +60,7 @@ const Store = () => {
             </label>
 
             <input type="radio" className="radio-btns" name="storeItemCategory" id="inverter" />
-            <label htmlFor="inverter" onClick={() => navigate("heavyVehicles")} className="service-box store-cat">
+            <label htmlFor="inverter" onClick={() => navigate("inverterBattery")} className="service-box store-cat">
               <img src={inverter} alt="" />
               <p>Inverter & Battery</p>
             </label>

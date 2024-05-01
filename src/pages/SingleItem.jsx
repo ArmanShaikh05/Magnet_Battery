@@ -1,17 +1,67 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import amaronBattery from "../assets/amaronBattery.png";
 import returnIcon from "../assets/return.svg";
+import { useEffect, useState } from "react";
+import Loader from "../components/Loader";
 
 const SingleItem = () => {
     const navigate = useNavigate()
+    const id = useParams().id
+
+    // const [item, setItem] = useState(null)
+    const [name, setName] = useState("");
+    const [mrp, setMrp] = useState("");
+    const [sellingPrice, setSellingPrice] = useState("");
+    const [vehicles, setVehicles] = useState("");
+    const [oldBatteryPrice, setOldBatteryPrice] = useState("");
+    const [brand, setBrand] = useState("");
+    const [itemCode, setItemCode] = useState("");
+    const [voltage, setVoltage] = useState("");
+    const [amphere, setAmphere] = useState("");
+    const [totalWarranty, setTotalWarranty] = useState("");
+    const [freeWarranty, setFreeWarranty] = useState("");
+    const [proRataWarranty, setProRataWarranty] = useState("");
+
+    const [discountPrice, setDiscountPrice] = useState()
+    const [discountPercent, setDiscountPercent] = useState()
+    const [loading, setLoading] = useState(false)
+
+
+    useEffect(()=>{
+      setLoading(true)
+      fetch(`${import.meta.env.VITE_SERVER}/api/v1/products/all/${id}`).then((response)=>{
+        response.json().then((itemData)=>{
+          setName(itemData.name);
+          setMrp(itemData.boxPrice);
+          setSellingPrice(itemData.sellingPrice);
+          setVehicles(itemData.vehicles);
+          setOldBatteryPrice(itemData.oldBatteryPrice);
+          setBrand(itemData.brand);
+          setItemCode(itemData.itemCode);
+          setVoltage(itemData.voltage);
+          setAmphere(itemData.amphere);
+          setTotalWarranty(itemData.totalWarranty);
+          setFreeWarranty(itemData.freeWarranty);
+          setProRataWarranty(itemData.proRataWarranty);
+          setDiscountPercent((((itemData.boxPrice - itemData.sellingPrice) / itemData.sellingPrice)*100).toFixed(1))
+          setDiscountPrice(itemData.boxPrice - itemData.sellingPrice)
+        })
+        setLoading(false)
+      })
+    },[id])
+
+    // const discount = ((item.boxPrice - item.sellingPrice) / item.boxPrice) * 100
+    // console.log(item)
+
+
   return (
     <div className="single-item">
-        <div className="container single-item-container">
+        {loading ? <Loader /> : <div className="container single-item-container">
           <div className="go-back-btn">
             <button className="btn" onClick={()=>navigate("/store")}> Go back </button>
           </div>
           <h1>
-            AMARON PRO Bike Rider 2 Wheeler Battery - 12APBTX50 (ABR-PR-12APBTX50)
+            {name}
           </h1>
           <img src={amaronBattery} alt="amaronBattery" className="item-img" />
           <div className="item-price-details">
@@ -19,17 +69,17 @@ const SingleItem = () => {
 
             <div className="baseprice-row">
               <div className="baseprice">base price</div>
-              <div className="price">₹ 1500</div>
+              <div className="price">₹ {mrp}</div>
             </div>
 
             <div className="baseprice-row">
-              <div className="baseprice">Special discount <span>(10%)</span></div>
-              <div className="price discount-price">₹ 150</div>
+              <div className="baseprice">Special discount <span>({discountPercent} %)</span></div>
+              <div className="price discount-price">{discountPrice}</div>
             </div>
 
             <div className="baseprice-row">
               <div className="baseprice">total price</div>
-              <div className="price">₹ 1350</div>
+              <div className="price">₹ {sellingPrice}</div>
             </div>
         
             
@@ -41,8 +91,8 @@ const SingleItem = () => {
                 <h1>Rebate on return of old battery</h1>
             </div>
             <div className="return-notice">
-                <p className="price">₹ 290</p>
-                <p className="notice">*Additionally, rebate upto 290 per unit on return of similar old battery</p>
+                <p className="price">₹ {oldBatteryPrice}</p>
+                <p className="notice">*Additionally, rebate upto ₹{oldBatteryPrice} per unit on return of similar old battery</p>
             </div>
           </div>
 
@@ -51,39 +101,35 @@ const SingleItem = () => {
 
             <div className="table-row">
                 <p className="table-heading">brand</p>
-                <p className="table-text">amaron</p>
-            </div>
-            <div className="table-row">
-                <p className="table-heading">series</p>
-                <p className="table-text">pro</p>
+                <p className="table-text">{brand}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">item code</p>
-                <p className="table-text">abr-pr-12apbtx50</p>
+                <p className="table-text">{itemCode}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">voltage (v)</p>
-                <p className="table-text">12</p>
+                <p className="table-text">{voltage}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">amphere (ah)</p>
-                <p className="table-text">9</p>
+                <p className="table-text">{amphere}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">total warranty <span>(months)</span></p>
-                <p className="table-text">48</p>
+                <p className="table-text">{totalWarranty}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">free warranty <span>(months)</span></p>
-                <p className="table-text">24</p>
+                <p className="table-text">{freeWarranty}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">pro-rata warranty <span>(months)</span></p>
-                <p className="table-text">24</p>
+                <p className="table-text">{proRataWarranty}</p>
             </div>
             <div className="table-row">
                 <p className="table-heading">compatible with</p>
-                <p className="table-text">bajaj avenger, honda shine</p>
+                <p className="table-text">{vehicles}</p>
             </div>
 
 
@@ -92,7 +138,7 @@ const SingleItem = () => {
           <p>For additional inquiries related to batteries and prices, feel free to contact us.</p>
 
           <button className="btn" onClick={()=>{window.scrollTo(0,0);navigate("/contact")}}>contact us</button>
-        </div>
+        </div>}
     </div>
   );
 };

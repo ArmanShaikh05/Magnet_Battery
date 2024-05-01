@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import {Toaster} from "react-hot-toast"
 import Loader from "./components/Loader";
 
+
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const Store = lazy(() => import("./pages/Store"));
@@ -50,7 +51,7 @@ function App() {
           </Route>
 
           
-          <Route path="/single-item" element={<SingleItem />} />
+          <Route path="/item/:id" element={<SingleItem />} />
 
 
           <Route path="/manage-store" element={<ManageStore />} > 
@@ -65,7 +66,7 @@ function App() {
 
           <Route path="/add" element={<AddItem />} />
 
-          <Route path="/edit" element={<EditItem />} />
+          <Route path="/edit/:id" element={<EditItem />} />
 
         </Routes>
       <Footer />

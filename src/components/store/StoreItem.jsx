@@ -1,21 +1,21 @@
 import { useNavigate } from "react-router-dom"
-import amaronBattery from "../../assets/amaronBattery.png"
 
-const StoreItem = () => {
+/* eslint-disable react/prop-types */
+const StoreItem = ({itemData}) => {
   const navigate = useNavigate()
   return (
     <div className="store-item">
-        <div className="store-item-img"><img src={amaronBattery} alt="amaronBattery" /></div>
+        <div className="store-item-img"><img src={itemData.image.url} alt="amaronBattery" /></div>
         <div className="item-details">
-            <h1>AMARON PRO Bike Rider 2 Wheeler Battery - APBTZ4L (ABR-PR-APBTZ4L)</h1>
-            <span>₹1500</span>
+            <h1>{itemData.name}</h1>
+            <span>{itemData.boxPrice}</span>
             <div className="item-price-box">
-                <p className="item-price">₹1300 /-</p>
+                <p className="item-price">{itemData.sellingPrice} /-</p>
                 <p className="item-discount">(15% off)</p>
             </div>
             <div className="compatible-vehicles">
-                <p><strong>Compatible with - </strong>Bajaj Avenger, Honda Shine, Activa </p>
-                <button onClick={()=>{window.scrollTo(0,0),navigate('/single-item')}}  className="btn">View details</button>
+                <p><strong>Compatible with - </strong>{itemData.vehicles}</p>
+                <button onClick={()=>{window.scrollTo(0,0),navigate(`/item/${itemData._id}`)}}  className="btn">View details</button>
             </div>
         </div>
     </div>

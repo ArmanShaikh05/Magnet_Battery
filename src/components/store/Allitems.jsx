@@ -1,13 +1,23 @@
+import { useEffect, useState } from "react";
 import StoreItem from "./StoreItem";
+import axios from "axios"
 
 const Allitems = () => {
+
+  const [itemData, setItemData] = useState([])
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+
+  const fetchData = async() => {
+    const response = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/products/all`)
+    setItemData(response.data)
+  }
+
   return (
-    <>
-      <StoreItem />
-      <StoreItem />
-      <StoreItem />
-    </>
-  );
+    itemData ? itemData.map((item,index) => (<StoreItem key={index} itemData={item} />)) : <h1>No Items</h1>
+  )
 };
 
 export default Allitems;

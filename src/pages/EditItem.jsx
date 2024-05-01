@@ -1,10 +1,36 @@
-// import axios from "axios";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import {  useNavigate } from "react-router-dom";
-
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditItem = () => {
+  const id = useParams().id;
+
+  useEffect(() => {
+    fetchData();
+  }, [id]);
+
+  const fetchData = () => {
+    fetch(`${import.meta.env.VITE_SERVER}/api/v1/products/all/${id}`).then(
+      (response) => {
+        response.json().then((itemData) => {
+          setName(itemData.name);
+          setMrp(itemData.boxPrice);
+          setSellingPrice(itemData.sellingPrice);
+          setVehicles(itemData.vehicles);
+          setOldBatteryPrice(itemData.oldBatteryPrice);
+          setBrand(itemData.brand);
+          setCategory(itemData.category);
+          setItemCode(itemData.itemCode);
+          setVoltage(itemData.voltage);
+          setAmphere(itemData.amphere);
+          setTotalWarranty(itemData.totalWarranty);
+          setFreeWarranty(itemData.freeWarranty);
+          setProRataWarranty(itemData.proRataWarranty);
+        });
+      }
+    );
+  };
 
   const [name, setName] = useState("");
   const [mrp, setMrp] = useState("");
@@ -12,7 +38,7 @@ const EditItem = () => {
   const [vehicles, setVehicles] = useState("");
   const [oldBatteryPrice, setOldBatteryPrice] = useState("");
   const [brand, setBrand] = useState("Amaron");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Two-Wheeler");
   const [itemCode, setItemCode] = useState("");
   const [voltage, setVoltage] = useState("");
   const [amphere, setAmphere] = useState("");
@@ -23,65 +49,51 @@ const EditItem = () => {
 
   const navigate = useNavigate();
 
-
   const handleNavigate = (e) => {
     e.preventDefault();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
     navigate("/manage-store");
   };
 
-  const createNewPost = async (e) => {
+  const updateItem = async (e) => {
     e.preventDefault();
-    console.log(file)
 
-    // if (title.length === 0) {
-    //   toast.error("Title is Required");
-    // } else if (summary.length === 0) {
-    //   toast.error("Summary is Required");
-    // } else if (content.length === 0) {
-    //   toast.error("Content is Required");
-    // } else if(!file){
-    //   toast.error("Please Add an Image")
-    // } else {
-    //   const data = new FormData();
-    //   data.set("title", title);
-    //   data.set("summary", summary);
-    //   data.set("content", content);
-    //   data.set("section", section);
-    //   cats.forEach((cat) => {
-    //     data.append("category[]", cat);
-    //   });
-    //   data.set("file", file[0]);
+    try {
+      const data = new FormData();
+      data.set("name", name);
+      data.set("boxPrice", mrp);
+      data.set("sellingPrice", sellingPrice);
+      data.set("vehicles", vehicles);
+      data.set("oldBatteryPrice", oldBatteryPrice);
+      data.set("brand", brand);
+      data.set("category", category);
+      data.set("itemCode", itemCode);
+      data.set("voltage", voltage);
+      data.set("amphere", amphere);
+      data.set("totalWarranty", totalWarranty);
+      data.set("freeWarranty", freeWarranty);
+      data.set("proRataWarranty", proRataWarranty);
 
+      if (file?.[0]) {
+        data.set("file", file?.[0]);
+      }
 
-    //   try {
+      toast.promise(axios.put(`${import.meta.env.VITE_SERVER}/api/v1/products/edit/${id}`,data),{
+        loading: "Updating Item",
+        success: <b>Item Updated</b>,
+        error: <b>Item Not Updated</b>
+      }).then(()=> {window.scrollTo(0,0);navigate("/manage-store")}).catch((error)=>{
+        toast.error(error.message)
+      })
 
-    //     const response = await axios.post(`${process.env.REACT_APP_SERVER}/create`,data);
-    //     if (response) {
-    //       if(response.data.success === true){
-    //         toast.success(response.data.message);
-    //         setRedirect(true);
-    //       }
-    //       else{
-    //         toast.error(response.data.message);
-    //         setRedirect(false)
-    //       }
-    //     }
-    //   } catch (error) {
-    //     console.log(error)
-    //   }
-
-    toast.success("Item Updated")
-     
+    } catch (error) {
+      console.log(error);
     }
-
-
-
-
+  };
 
   return (
     <div className="container add-item">
-    <form>
+      <form>
         <div className="form-row">
           <h1>Name</h1>
           <input
@@ -96,18 +108,18 @@ const EditItem = () => {
         <div className="form-row">
           <h1>Upload Image</h1>
           <input
-          id="file"
-          type="file"
-          className="inputfile"
-          onChange={(e) => setFile(e.target.files)}
-          accept=".jpg, .png, .jpeg, .webp, .jfif, .avif"
-        />
+            id="file"
+            type="file"
+            className="inputfile"
+            onChange={(e) => setFile(e.target.files)}
+            accept=".jpg, .png, .jpeg, .webp, .jfif, .avif"
+          />
         </div>
 
         <div className="form-row">
           <h1>Select Brand</h1>
           <select onChange={(e) => setBrand(e.target.value)} value={brand}>
-            <option >Amaron</option>
+            <option>Amaron</option>
             <option>Exide</option>
             <option>PowerZone</option>
             <option>Luminous</option>
@@ -117,8 +129,11 @@ const EditItem = () => {
 
         <div className="form-row">
           <h1>Select Category</h1>
-          <select onChange={(e) => setCategory(e.target.value)} value={category}>
-            <option >Two-Wheeler</option>
+          <select
+            onChange={(e) => setCategory(e.target.value)}
+            value={category}
+          >
+            <option>Two-Wheeler</option>
             <option>Three-Wheeler</option>
             <option>Passenger-Vehicle</option>
             <option>Heavy-Vehicle</option>
@@ -133,7 +148,7 @@ const EditItem = () => {
             placeholder="Enter the MRP"
             required
             value={mrp}
-            onChange={(e)=>setMrp(e.target.value)}
+            onChange={(e) => setMrp(e.target.value)}
           />
         </div>
 
@@ -144,7 +159,7 @@ const EditItem = () => {
             placeholder="Enter the selling price"
             required
             value={sellingPrice}
-            onChange={(e)=>setSellingPrice(e.target.value)}
+            onChange={(e) => setSellingPrice(e.target.value)}
           />
         </div>
 
@@ -155,7 +170,7 @@ const EditItem = () => {
             placeholder="Enter the compatible vehicles"
             required
             value={vehicles}
-            onChange={(e)=>setVehicles(e.target.value)}
+            onChange={(e) => setVehicles(e.target.value)}
           />
         </div>
 
@@ -166,7 +181,7 @@ const EditItem = () => {
             placeholder="Enter the old battery price"
             required
             value={oldBatteryPrice}
-            onChange={(e)=>setOldBatteryPrice(e.target.value)}
+            onChange={(e) => setOldBatteryPrice(e.target.value)}
           />
         </div>
 
@@ -177,7 +192,7 @@ const EditItem = () => {
             placeholder="Enter the S.no"
             required
             value={itemCode}
-            onChange={(e)=>setItemCode(e.target.value)}
+            onChange={(e) => setItemCode(e.target.value)}
           />
         </div>
 
@@ -188,7 +203,7 @@ const EditItem = () => {
             placeholder="Enter the voltage"
             required
             value={voltage}
-            onChange={(e)=>setVoltage(e.target.value)}
+            onChange={(e) => setVoltage(e.target.value)}
           />
         </div>
 
@@ -199,7 +214,7 @@ const EditItem = () => {
             placeholder="Enter the amphere"
             required
             value={amphere}
-            onChange={(e)=>setAmphere(e.target.value)}
+            onChange={(e) => setAmphere(e.target.value)}
           />
         </div>
 
@@ -210,7 +225,7 @@ const EditItem = () => {
             placeholder="Enter the total warranty"
             required
             value={totalWarranty}
-            onChange={(e)=>setTotalWarranty(e.target.value)}
+            onChange={(e) => setTotalWarranty(e.target.value)}
           />
         </div>
 
@@ -221,7 +236,7 @@ const EditItem = () => {
             placeholder="Enter the free waranty"
             required
             value={freeWarranty}
-            onChange={(e)=>setFreeWarranty(e.target.value)}
+            onChange={(e) => setFreeWarranty(e.target.value)}
           />
         </div>
 
@@ -232,16 +247,9 @@ const EditItem = () => {
             placeholder="Enter the pro-rata warranty"
             required
             value={proRataWarranty}
-            onChange={(e)=>setProRataWarranty(e.target.value)}
+            onChange={(e) => setProRataWarranty(e.target.value)}
           />
         </div>
-
-        
-
-        
-
-        
-
 
         <div className="btn-Container">
           <button
@@ -253,13 +261,17 @@ const EditItem = () => {
           >
             Cancel
           </button>
-          <button className="createBtn btn" onClick={createNewPost} type="submit">
+          <button
+            className="createBtn btn"
+            onClick={updateItem}
+            type="submit"
+          >
             Update Item
           </button>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default EditItem
+export default EditItem;

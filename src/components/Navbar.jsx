@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const [showBg, setShowBg] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  const TOP_OFFSET = 80;
+  const TOP_OFFSET = 50;
   const navigate = useNavigate();
 
   useEffect(() => {

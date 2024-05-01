@@ -1,7 +1,21 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
+import ManageStoreItem from "./ManageStoreItem"
 
 const InverterBattery = () => {
+  const [itemData, setItemData] = useState([])
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+
+  const fetchData = async() => {
+    const response = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/products/all?category=Inverter`)
+    setItemData(response.data)
+  }
+
   return (
-    <div>InverterBattery</div>
+    itemData ? itemData.map((item,index) => (<ManageStoreItem key={index} itemData={item} />)) : <h1>No Items</h1>
   )
 }
 

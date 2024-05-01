@@ -1,13 +1,19 @@
 
 import toast from "react-hot-toast";
+import axios from "axios"
+
+
 /* eslint-disable react/prop-types */
-const DeleteOverlay = ({ open, setOpen }) => {
+const DeleteOverlay = ({ open, setOpen, id, name }) => {
   
   const handledelete = async () => {
-   toast.success("Deleted")
+   toast.promise(axios.delete(`${import.meta.env.VITE_SERVER}/api/v1/products/delete/${id}`),{
+    loading:"Deleting Item",
+    success:<b>Item Deleted</b>,
+    error:<b>Item Not Deleted</b>
+   })
    setOpen(false);
   };
-  const title = "Demo Title"
 
   if (open) {
     return (
@@ -15,7 +21,7 @@ const DeleteOverlay = ({ open, setOpen }) => {
         <div className="overlay-box">
           <div className="overlay-data">
             <h2>Are you sure you want to delete the Item?</h2>
-            <h4>Title:- `{title}`</h4>
+            <h4>Name:- `{name}`</h4>
           </div>
           <div className="overlay-buttons">
             <button
