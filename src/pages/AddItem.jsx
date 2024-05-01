@@ -12,6 +12,7 @@ const AddItem = () => {
   const [vehicles, setVehicles] = useState("");
   const [oldBatteryPrice, setOldBatteryPrice] = useState("");
   const [brand, setBrand] = useState("Amaron");
+  const [category, setCategory] = useState("");
   const [itemCode, setItemCode] = useState("");
   const [voltage, setVoltage] = useState("");
   const [amphere, setAmphere] = useState("");
@@ -111,6 +112,17 @@ const AddItem = () => {
             <option>PowerZone</option>
             <option>Luminous</option>
             <option>Microtek</option>
+          </select>
+        </div>
+
+        <div className="form-row">
+          <h1>Select Category</h1>
+          <select onChange={(e) => setCategory(e.target.value)} value={category}>
+            <option >Two-Wheeler</option>
+            <option>Three-Wheeler</option>
+            <option>Passenger-Vehicle</option>
+            <option>Heavy-Vehicle</option>
+            <option>Inverter&Battery</option>
           </select>
         </div>
 
