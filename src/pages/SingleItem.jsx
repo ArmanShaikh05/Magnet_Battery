@@ -43,7 +43,7 @@ const SingleItem = () => {
           setTotalWarranty(itemData.totalWarranty);
           setFreeWarranty(itemData.freeWarranty);
           setProRataWarranty(itemData.proRataWarranty);
-          setDiscountPercent((((itemData.boxPrice - itemData.sellingPrice) / itemData.sellingPrice)*100).toFixed(1))
+          setDiscountPercent((((itemData.boxPrice - itemData.sellingPrice) / itemData.boxPrice)*100).toFixed(1))
           setDiscountPrice(itemData.boxPrice - itemData.sellingPrice)
           setImage(itemData.image.url)
         })
