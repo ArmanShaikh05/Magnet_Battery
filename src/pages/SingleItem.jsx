@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from "react-router-dom";
-import amaronBattery from "../assets/amaronBattery.png";
 import returnIcon from "../assets/return.svg";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
@@ -21,6 +20,7 @@ const SingleItem = () => {
     const [totalWarranty, setTotalWarranty] = useState("");
     const [freeWarranty, setFreeWarranty] = useState("");
     const [proRataWarranty, setProRataWarranty] = useState("");
+    const [image, setImage] = useState('')
 
     const [discountPrice, setDiscountPrice] = useState()
     const [discountPercent, setDiscountPercent] = useState()
@@ -45,13 +45,11 @@ const SingleItem = () => {
           setProRataWarranty(itemData.proRataWarranty);
           setDiscountPercent((((itemData.boxPrice - itemData.sellingPrice) / itemData.sellingPrice)*100).toFixed(1))
           setDiscountPrice(itemData.boxPrice - itemData.sellingPrice)
+          setImage(itemData.image.url)
         })
         setLoading(false)
       })
     },[id])
-
-    // const discount = ((item.boxPrice - item.sellingPrice) / item.boxPrice) * 100
-    // console.log(item)
 
 
   return (
@@ -63,7 +61,7 @@ const SingleItem = () => {
           <h1>
             {name}
           </h1>
-          <img src={amaronBattery} alt="amaronBattery" className="item-img" />
+          <img src={image} alt="amaronBattery" className="item-img" />
           <div className="item-price-details">
 
 
