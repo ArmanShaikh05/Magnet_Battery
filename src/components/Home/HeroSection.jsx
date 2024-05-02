@@ -1,16 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import HeroRightImage from "../../assets/heroRightImg.png";
+import { useSidebarContextHook } from "../../context/contextHooks";
 
 const HeroSection = () => {
 
   const navigate = useNavigate(); 
+  const {setShowSidebar} = useSidebarContextHook()
 
   const handleContactClick = (e) => {
     e.preventDefault
+    setShowSidebar(false)
     navigate("/contact")
   }
   const handleStoreClick = (e) => {
     e.preventDefault
+    setShowSidebar(false)
     navigate("/store")
   }
 

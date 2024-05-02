@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSidebarContextHook } from "../context/contextHooks";
 
 const EditItem = () => {
   const id = useParams().id;
@@ -48,10 +49,12 @@ const EditItem = () => {
   const [file, setFile] = useState("");
 
   const navigate = useNavigate();
+  const {setShowSidebar} = useSidebarContextHook()
 
   const handleNavigate = (e) => {
     e.preventDefault();
     window.scrollTo(0, 0);
+    setShowSidebar(false)
     navigate("/manage-store");
   };
 

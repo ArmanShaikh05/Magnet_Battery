@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
+import {useSidebarContextHook } from "../context/contextHooks";
 
 const Navbar = () => {
   const [showBg, setShowBg] = useState(false);
-  const [showSidebar, setShowSidebar] = useState(false);
   const TOP_OFFSET = 50;
   const navigate = useNavigate();
+  const {showSidebar,setShowSidebar} = useSidebarContextHook()
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +53,7 @@ const Navbar = () => {
       className={`navbar-container ${showBg ? "navWithBg" : "navWithoutBg"}`}
     >
       <nav className={`navbar container `}>
-        <Link to={"/"}>
+        <Link to={"/"} onClick={()=>setShowSidebar(false)} >
           <img src={logo} alt="Logo" />
         </Link>
 

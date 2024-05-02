@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import DeleteOverlay from "../DeleteOverlay";
+import { useSidebarContextHook } from "../../context/contextHooks";
 
 /* eslint-disable react/prop-types */
 const ManageStoreItem = ({itemData}) => {
   const navigate = useNavigate()
   const [showOverlay, setShowOverlay] = useState(false);
+  const {setShowSidebar} = useSidebarContextHook()
   return (
     <>
     <DeleteOverlay
@@ -28,7 +30,7 @@ const ManageStoreItem = ({itemData}) => {
             </div>
 
             <div className="manage-btns">
-              <button className=" btn" onClick={()=>{window.scrollTo(0,0);navigate(`/edit/${itemData._id}`)}}>Edit Item</button>
+              <button className=" btn" onClick={()=>{window.scrollTo(0,0);setShowSidebar(false);navigate(`/edit/${itemData._id}`)}}>Edit Item</button>
               <button className="btn delete-btn" onClick={() => setShowOverlay(true)}>Delete Item</button>
             </div>
         </div>

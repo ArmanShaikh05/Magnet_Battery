@@ -6,9 +6,11 @@ import passengerVehicle from "../assets/PassengerVehicle.svg";
 import inverter from "../assets/inverterBattery.svg";
 import searchIcon from "../assets/searchIcon.svg";
 import { Outlet, useNavigate } from "react-router-dom";
+import { useSidebarContextHook } from "../context/contextHooks";
 
 const Store = () => {
   const navigate = useNavigate()
+  const {setShowSidebar} = useSidebarContextHook()
   return (
     <div className="store-page">
       <div className="services store">
@@ -19,7 +21,7 @@ const Store = () => {
             <input type="radio" className="radio-btns" name="storeItemCategory"  id="allitems" />
             <label
               htmlFor="allitems"
-              onClick={() => navigate("")}
+              onClick={() => {setShowSidebar(false);navigate("")}}
               className="service-box store-cat"
             >
               <img src={warehouse} alt="" />
@@ -29,7 +31,7 @@ const Store = () => {
             <input type="radio" className="radio-btns" name="storeItemCategory" id="twowheeler" />
             <label
               htmlFor="twowheeler"
-              onClick={() => navigate("twoWheelers")}
+              onClick={() => {setShowSidebar(false);navigate("twoWheelers")}}
               className="service-box store-cat"
             >
               <img src={twoWheeler} alt="" />
@@ -37,7 +39,7 @@ const Store = () => {
             </label>
 
             <input type="radio" className="radio-btns" name="storeItemCategory" id="threeWheeler" />
-            <label htmlFor="threeWheeler"  onClick={() => navigate("threeWheelers")} className="service-box store-cat">
+            <label htmlFor="threeWheeler"  onClick={() => {setShowSidebar(false);navigate("threeWheelers")}} className="service-box store-cat">
               <img src={threeWheeler} alt="" />
               <p>Three Wheelers</p>
             </label>
@@ -48,19 +50,19 @@ const Store = () => {
               id="passengerVehicle"
               className="radio-btns"
             />
-            <label htmlFor="passengerVehicle" onClick={() => navigate("passengerVehicles")} className="service-box store-cat">
+            <label htmlFor="passengerVehicle" onClick={() => {setShowSidebar(false);navigate("passengerVehicles")}} className="service-box store-cat">
               <img src={passengerVehicle} alt="" />
               <p>Passenger Vehicles</p>
             </label>
 
             <input type="radio" className="radio-btns" name="storeItemCategory" id="heavyVehicle" />
-            <label htmlFor="heavyVehicle" onClick={() => navigate("heavyVehicles")} className="service-box store-cat">
+            <label htmlFor="heavyVehicle" onClick={() => {setShowSidebar(false);navigate("heavyVehicles")}} className="service-box store-cat">
               <img src={heavyVehicle} alt="" />
               <p>Heavy Vehicles</p>
             </label>
 
             <input type="radio" className="radio-btns" name="storeItemCategory" id="inverter" />
-            <label htmlFor="inverter" onClick={() => navigate("inverterBattery")} className="service-box store-cat">
+            <label htmlFor="inverter" onClick={() => {setShowSidebar(false);navigate("inverterBattery")}} className="service-box store-cat">
               <img src={inverter} alt="" />
               <p>Inverter & Battery</p>
             </label>

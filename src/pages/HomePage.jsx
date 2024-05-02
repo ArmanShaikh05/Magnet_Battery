@@ -8,10 +8,9 @@ import FaqSection from "../components/Home/FaqSection";
 import { useEffect } from "react";
 
 const HomePage = () => {
-
-  useEffect(()=>{
-    window.scrollTo(0,0)
-  })
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <>
