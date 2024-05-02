@@ -82,7 +82,7 @@ $btn-hover-color: #bfe385;
         
     
             .branch-text{
-                width: 75%;
+                width: 90%;
                 background: $primary-dark-variant;
                 padding: 3rem 2rem;
                 height: max-content;
@@ -96,7 +96,8 @@ $btn-hover-color: #bfe385;
             }
     
             .branch-img{
-                width: 65%;
+                width: 90%;
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -123,7 +124,7 @@ $btn-hover-color: #bfe385;
     }
 
     .hero > img {
-        width: 70%;
+        width: 80%;
     }
 
     .hero > .hero-data .hero-text > h1 {

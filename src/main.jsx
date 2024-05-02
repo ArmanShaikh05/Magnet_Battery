@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./styles/app.scss";
 import { SidebarContextProvider } from "./context/sidebar.jsx";
+import { GlobalDataContextProvider } from "./context/globalData.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <SidebarContextProvider>
-      <App />
-    </SidebarContextProvider>
+    <GlobalDataContextProvider>
+      <SidebarContextProvider>
+        <App />
+      </SidebarContextProvider>
+    </GlobalDataContextProvider>
   </React.StrictMode>
 );

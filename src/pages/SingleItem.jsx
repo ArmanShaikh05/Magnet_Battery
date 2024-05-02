@@ -2,12 +2,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import returnIcon from "../assets/return.svg";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
+import { useGlobalContextHook } from "../context/contextHooks";
 
 const SingleItem = () => {
     const navigate = useNavigate()
     const id = useParams().id
 
-    // const [item, setItem] = useState(null)
+    const {path} = useGlobalContextHook()
+
     const [name, setName] = useState("");
     const [mrp, setMrp] = useState("");
     const [sellingPrice, setSellingPrice] = useState("");
@@ -56,7 +58,7 @@ const SingleItem = () => {
     <div className="single-item">
         {loading ? <Loader /> : <div className="container single-item-container">
           <div className="go-back-btn">
-            <button className="btn" onClick={()=>navigate("/store")}> Go back </button>
+            <button className="btn" onClick={()=>navigate(`/store/${path}`)}> Go back </button>
           </div>
           <h1>
             {name}

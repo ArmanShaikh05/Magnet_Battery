@@ -8,6 +8,7 @@ const ManageStoreItem = ({itemData}) => {
   const navigate = useNavigate()
   const [showOverlay, setShowOverlay] = useState(false);
   const {setShowSidebar} = useSidebarContextHook()
+  const discount = (((itemData.boxPrice - itemData.sellingPrice) / itemData.boxPrice)*100).toFixed(1)
   return (
     <>
     <DeleteOverlay
@@ -23,7 +24,7 @@ const ManageStoreItem = ({itemData}) => {
             <span>{itemData.boxPrice}</span>
             <div className="item-price-box">
                 <p className="item-price">{itemData.sellingPrice} /-</p>
-                <p className="item-discount">(15% off)</p>
+                <p className="item-discount">({discount}% off)</p>
             </div>
             <div className="compatible-vehicles">
                 <p><strong>Compatible with - </strong>{itemData.vehicles}</p>

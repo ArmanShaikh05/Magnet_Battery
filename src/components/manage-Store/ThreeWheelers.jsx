@@ -1,16 +1,18 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import ManageStoreItem from "./ManageStoreItem"
+import { useGlobalContextHook } from "../../context/contextHooks"
 
 const ThreeWheelers = () => {
   const [itemData, setItemData] = useState([])
+  const {brand,search} = useGlobalContextHook()
 
   useEffect(()=>{
     fetchData()
-  },[])
+  },[brand,search])
 
   const fetchData = async() => {
-    const response = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/products/all?category=Three`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/products/all?category=Three&search=${search}&brand=${brand}`)
     setItemData(response.data)
   }
 

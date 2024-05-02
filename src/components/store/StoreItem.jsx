@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 /* eslint-disable react/prop-types */
 const StoreItem = ({itemData}) => {
   const navigate = useNavigate()
+  const discount = (((itemData.boxPrice - itemData.sellingPrice) / itemData.boxPrice)*100).toFixed(1)
   return (
     <div className="store-item">
         <div className="store-item-img"><img src={itemData.image.url} alt="amaronBattery" /></div>
@@ -11,7 +12,7 @@ const StoreItem = ({itemData}) => {
             <span>{itemData.boxPrice}</span>
             <div className="item-price-box">
                 <p className="item-price">{itemData.sellingPrice} /-</p>
-                <p className="item-discount">(15% off)</p>
+                <p className="item-discount">({discount}% off)</p>
             </div>
             <div className="compatible-vehicles">
                 <p><strong>Compatible with - </strong>{itemData.vehicles}</p>

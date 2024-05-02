@@ -1,14 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import {useEffect, useState } from "react";
-import {useSidebarContextHook } from "../context/contextHooks";
+import {useGlobalContextHook, useSidebarContextHook } from "../context/contextHooks";
 
 const Navbar = () => {
   const [showBg, setShowBg] = useState(false);
   const TOP_OFFSET = 50;
   const navigate = useNavigate();
   const {showSidebar,setShowSidebar} = useSidebarContextHook()
-
+  const {setPath} = useGlobalContextHook()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +34,16 @@ const Navbar = () => {
   const handleNavigate = (e) => {
     e.preventDefault();
     setShowSidebar(false)
-    navigate("/store")
+    navigate("/store/")
+    setPath("")
+    window.scrollTo(0,0)
+  };
+
+  const handleManageStoreNavigate = (e) => {
+    e.preventDefault();
+    setShowSidebar(false)
+    navigate("/manage-store/")
+    setPath("")
     window.scrollTo(0,0)
     unCheckRadioBtns()
   };
@@ -62,7 +71,7 @@ const Navbar = () => {
           <a href="/#about">About us</a>
           <Link to={"/contact"}>Contact Us</Link>
           <button className="btn" onClick={(e)=>handleNavigate(e)} >Our Store</button>
-          <button className="ghost-btn" onClick={()=>{window.scrollTo(0,0);navigate("manage-store")}} >Manage Store</button>
+          <button className="ghost-btn" onClick={(e)=>handleManageStoreNavigate(e)} >Manage Store</button>
         </div>
 
         <svg onClick={(e)=>handleShowSidebarEvent(e)} className="hamburger-menu" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512">
@@ -76,8 +85,8 @@ const Navbar = () => {
           <Link onClick={()=>setShowSidebar(false)} to="/">Home</Link>
             <a onClick={()=>setShowSidebar(false)} href="/#about">About us</a>
             <Link onClick={()=>{window.scrollTo(0,0);setShowSidebar(false)}} to={"/contact"}>Contact Us</Link>
-            <Link onClick={()=>{window.scrollTo(0,0);setShowSidebar(false)}} to={"/manage-store"}>Manage Store</Link>
-            <button className="btn" onClick={(e)=>{window.scrollTo(0,0);handleNavigate(e)}} >Our Store</button>
+            <Link onClick={(e)=>handleManageStoreNavigate(e)} to={"/manage-store"}>Manage Store</Link>
+            <button className="btn" onClick={(e)=>handleNavigate(e)} >Our Store</button>
           </div>
           </div>
         
