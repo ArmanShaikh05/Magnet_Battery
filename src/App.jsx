@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import {Toaster} from "react-hot-toast"
 import Loader from "./components/Loader";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from "./context/contextHooks";
+import AdminRoute from "./components/AdminRoute";
 
 
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -19,6 +22,9 @@ const SingleItem = lazy(()=>import("./pages/SingleItem"))
 const ManageStore = lazy(()=>import("./pages/ManageStore"))
 const AddItem = lazy(()=>import("./pages/AddItem"))
 const EditItem = lazy(()=>import("./pages/EditItem"))
+const LogIn = lazy(()=>import("./pages/LogIn"))
+const SignUp = lazy(()=>import("./pages/SignUp"))
+const ResetPassword = lazy(()=>import("./pages/ResetPassword"))
 
 
 // manage store item imports
@@ -30,6 +36,9 @@ const ManageInverterBattery = lazy(()=>import("./components/manage-Store/Inverte
 const ManageAllitems = lazy(()=>import("./components/manage-Store/Allitems"))
 
 function App() {
+
+  const {currentUser} = useAuth()
+
   return (
     <Router>
       <Toaster />
@@ -54,19 +63,26 @@ function App() {
           <Route path="/item/:id" element={<SingleItem />} />
 
 
-          <Route path="/manage-store" element={<ManageStore />} > 
-              <Route path="" element={<ManageAllitems />} />
-              <Route path="/manage-store/*" element={<ManageAllitems />} />
-              <Route path="twoWheelers" element={<ManageTwoWheelers />} />
-              <Route path="threeWheelers" element={<ManageThreeWheelers />} />
-              <Route path="passengerVehicles" element={<ManagePassengerVehicles />} />Manage
-              <Route path="heavyVehicles" element={<ManageHeavyVehicles />} />
-              <Route path="inverterBattery" element={<ManageInverterBattery />} />
+          <Route element={<AdminRoute isAuthenticated={currentUser ? true : false} isAdmin={currentUser?.uid === import.meta.env.VITE_ADMIN_UID ? true : false} />}>
+              <Route path="/manage-store" element={<ManageStore />} > 
+                  <Route path="" element={<ManageAllitems />} />
+                  <Route path="/manage-store/*" element={<ManageAllitems />} />
+                  <Route path="twoWheelers" element={<ManageTwoWheelers />} />
+                  <Route path="threeWheelers" element={<ManageThreeWheelers />} />
+                  <Route path="passengerVehicles" element={<ManagePassengerVehicles />} />Manage
+                  <Route path="heavyVehicles" element={<ManageHeavyVehicles />} />
+                  <Route path="inverterBattery" element={<ManageInverterBattery />} />
+              </Route>
+              <Route path="/add" element={<AddItem />} />
+              <Route path="/edit/:id" element={<EditItem />} />
           </Route>
 
-          <Route path="/add" element={<AddItem />} />
 
-          <Route path="/edit/:id" element={<EditItem />} />
+          <Route element={<ProtectedRoute isAuthenticated={currentUser ? false : true} />} >
+              <Route path="/login" element={<LogIn />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/resetpassword" element={<ResetPassword />} />
+          </Route>
 
         </Routes>
       <Footer />

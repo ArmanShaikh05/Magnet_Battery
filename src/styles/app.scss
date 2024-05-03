@@ -86,6 +86,10 @@ body{
         background-color: $btn-hover-color;
         
     }
+
+    &:disabled{
+        background-color: $btn-hover-color;
+    }
 }
 
 .ghost-btn{
@@ -174,6 +178,7 @@ section{
 @import '../styles/singleItem.scss';
 @import '../styles/managestore.scss';
 @import '../styles/additem.scss';
+@import '../styles/authentication.scss';
 
 
 // IMORTING MEDIA QUERIES
