@@ -26,6 +26,9 @@ const LogIn = lazy(()=>import("./pages/LogIn"))
 const SignUp = lazy(()=>import("./pages/SignUp"))
 const ResetPassword = lazy(()=>import("./pages/ResetPassword"))
 
+const TermsAndConditions = lazy(()=>import("./pages/TermsAndConditions"))
+const PrivacyPolicy = lazy(()=>import("./pages/PrivacyPolicy"))
+
 
 // manage store item imports
 const ManageTwoWheelers = lazy(()=>import("./components/manage-Store/TwoWheelers"))
@@ -84,6 +87,9 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/resetpassword" element={<ResetPassword />} />
           </Route>
+
+          <Route path="/terms-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         </Routes>
       <Footer />

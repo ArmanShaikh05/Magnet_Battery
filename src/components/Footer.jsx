@@ -1,5 +1,6 @@
 import logo from "../assets/logo.png"
 import email from "../assets/email.svg"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -15,8 +16,8 @@ const Footer = () => {
                     <p>magnetbattery123@gmail.com</p>
                 </div>
                 <div className="box2">
-                    <p>Privacy Policy</p>
-                    <p>Terms & Conditions</p>
+                    <Link to={"/privacy-policy"} onClick={()=>window.scrollTo(0,0)} >Privacy Policy</Link>
+                    <Link to={"/terms-conditions"} onClick={()=>window.scrollTo(0,0)}>Terms & Conditions</Link>
                 </div>
             </div>
         </div>
