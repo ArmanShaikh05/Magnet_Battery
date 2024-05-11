@@ -11,12 +11,10 @@ import { useEffect, useState } from "react";
 
 const ManageStore = () => {
   const navigate = useNavigate()
-//   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
   const {setShowSidebar} = useSidebarContextHook()
   const [searchData, setSearchData] = useState("")
   const {setBrand,setSearch,brand,path,setPath} = useGlobalContextHook()
 
-  // const pathName = window.location.pathname.split("/")[2]
 
   useEffect(() => {
     if (path === "") {

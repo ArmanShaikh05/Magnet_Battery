@@ -6,12 +6,14 @@ import { useSidebarContextHook } from "../context/contextHooks";
 
 const EditItem = () => {
   const id = useParams().id;
+  const [disable,setDisable] = useState(false)
 
   useEffect(() => {
     fetchData();
   }, [id]);
 
   const fetchData = () => {
+    setDisable(true)
     fetch(`${import.meta.env.VITE_SERVER}/api/v1/products/all/${id}`).then(
       (response) => {
         response.json().then((itemData) => {
@@ -31,6 +33,7 @@ const EditItem = () => {
         });
       }
     );
+    setDisable(false)
   };
 
   const [name, setName] = useState("");
@@ -60,6 +63,7 @@ const EditItem = () => {
 
   const updateItem = async (e) => {
     e.preventDefault();
+    setDisable(true)
 
     try {
       const data = new FormData();
@@ -85,11 +89,15 @@ const EditItem = () => {
         loading: "Updating Item",
         success: <b>Item Updated</b>,
         error: <b>Item Not Updated</b>
-      }).then(()=> {window.scrollTo(0,0);navigate("/manage-store")}).catch((error)=>{
+      }).then(()=> {window.scrollTo(0,0);navigate("/manage-store");setDisable(false)}).catch((error)=>{
         toast.error(error.message)
+        setDisable(false)
       })
 
+      setDisable(false)
+
     } catch (error) {
+      setDisable(false)
       console.log(error);
     }
   };
@@ -268,6 +276,7 @@ const EditItem = () => {
             className="createBtn btn"
             onClick={updateItem}
             type="submit"
+            disabled={disable}
           >
             Update Item
           </button>

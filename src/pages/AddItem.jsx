@@ -7,6 +7,8 @@ import axios from "axios"
 
 const AddItem = () => {
 
+  const [disable, setDisable] = useState(false)
+
   const [name, setName] = useState("");
   const [mrp, setMrp] = useState("");
   const [sellingPrice, setSellingPrice] = useState("");
@@ -33,39 +35,52 @@ const AddItem = () => {
 
   const createNewPost = async (e) => {
     e.preventDefault();
+    setDisable(true)
 
     if (name.length === 0) {
       toast.error("Name is Required");
+      setDisable(false)
     } else if (!file) {
       toast.error("Please Add an Image")
+      setDisable(false)
     } else if (brand.length === 0) {
       toast.error("Please Specify Brand");
+      setDisable(false)
     } else if( category.length === 0){
       toast.error("Please Specify Category");
+      setDisable(false)
     } 
      else if( mrp.length === 0){
       toast.error("MRP is required");
+      setDisable(false)
     } 
      else if( sellingPrice.length === 0){
       toast.error("Selling Price is required");
+      setDisable(false)
     } 
      else if( vehicles.length === 0){
       toast.error("Add Atleast One Vehicle");
+      setDisable(false)
     } 
      else if( oldBatteryPrice.length === 0){
       toast.error("Old Battery Price is required");
+      setDisable(false)
     } 
     else if( itemCode.length === 0){
       toast.error("Item Code is required");
+      setDisable(false)
     } 
     else if( voltage.length === 0){
       toast.error("Voltage is required");
+      setDisable(false)
     } 
     else if( amphere.length === 0){
       toast.error("Amphere is required");
+      setDisable(false)
     } 
     else if( totalWarranty.length === 0 || freeWarranty.length === 0 || proRataWarranty.length === 0){
       toast.error("Please add warranty details");
+      setDisable(false)
     } 
     
 
@@ -96,11 +111,15 @@ const AddItem = () => {
           loading:"Adding Item",
           success:<b>Item Added</b>,
           error:<b>Could not add item</b>
-        }).then(()=> {window.scrollTo(0,0);navigate("/manage-store")}).catch((error)=>{
+        }).then(()=> {window.scrollTo(0,0);navigate("/manage-store");setDisable(false)}).catch((error)=>{
           toast.error(error.message)
+          setDisable(false)
         })
 
+        
+
       } catch (error) {
+        setDisable(false)
         console.log(error)
       }     
     }
@@ -284,7 +303,7 @@ const AddItem = () => {
           >
             Cancel
           </button>
-          <button className="createBtn btn" onClick={createNewPost} type="submit">
+          <button className="createBtn btn" onClick={createNewPost} disabled={disable} type="submit">
             Create Item
           </button>
         </div>

@@ -9,9 +9,9 @@ const StoreItem = ({itemData}) => {
         <div className="store-item-img"><img src={itemData.image.url} alt="amaronBattery" /></div>
         <div className="item-details">
             <h1>{itemData.name}</h1>
-            <span>{itemData.boxPrice}</span>
+            <span>₹ {itemData.boxPrice}</span>
             <div className="item-price-box">
-                <p className="item-price">{itemData.sellingPrice} /-</p>
+                <p className="item-price">₹ {itemData.sellingPrice} /-</p>
                 <p className="item-discount">({discount}% off)</p>
             </div>
             <div className="compatible-vehicles">

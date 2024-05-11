@@ -182,3 +182,9 @@ $btn-hover-color: #bfe385;
     }
 
 }
+
+@media screen and (max-width: 340px) {
+    .hero-btns{
+        flex-direction: column;
+    }
+}

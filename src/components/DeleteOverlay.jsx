@@ -4,14 +4,21 @@ import axios from "axios"
 
 
 /* eslint-disable react/prop-types */
-const DeleteOverlay = ({ open, setOpen, id, name }) => {
+const DeleteOverlay = ({ open, setOpen, id, name, forceUpdate }) => {
   
   const handledelete = async () => {
    toast.promise(axios.delete(`${import.meta.env.VITE_SERVER}/api/v1/products/delete/${id}`),{
     loading:"Deleting Item",
-    success:<b>Item Deleted</b>,
-    error:<b>Item Not Deleted</b>
+    success:()=>{
+      forceUpdate()
+      return <b>Item Deleted</b>
+    },
+    error:()=>{
+      forceUpdate()
+      return <b>Item Not Deleted</b>
+    }
    })
+   
    setOpen(false);
   };
 
