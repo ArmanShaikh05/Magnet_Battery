@@ -8,41 +8,13 @@ const EditItem = () => {
   const id = useParams().id;
   const [disable,setDisable] = useState(false)
 
-  useEffect(() => {
-    fetchData();
-  }, [id]);
-
-  const fetchData = () => {
-    setDisable(true)
-    fetch(`${import.meta.env.VITE_SERVER}/api/v1/products/all/${id}`).then(
-      (response) => {
-        response.json().then((itemData) => {
-          setName(itemData.name);
-          setMrp(itemData.boxPrice);
-          setSellingPrice(itemData.sellingPrice);
-          setVehicles(itemData.vehicles);
-          setOldBatteryPrice(itemData.oldBatteryPrice);
-          setBrand(itemData.brand);
-          setCategory(itemData.category);
-          setItemCode(itemData.itemCode);
-          setVoltage(itemData.voltage);
-          setAmphere(itemData.amphere);
-          setTotalWarranty(itemData.totalWarranty);
-          setFreeWarranty(itemData.freeWarranty);
-          setProRataWarranty(itemData.proRataWarranty);
-        });
-      }
-    );
-    setDisable(false)
-  };
-
   const [name, setName] = useState("");
   const [mrp, setMrp] = useState("");
   const [sellingPrice, setSellingPrice] = useState("");
   const [vehicles, setVehicles] = useState("");
   const [oldBatteryPrice, setOldBatteryPrice] = useState("");
   const [brand, setBrand] = useState("Amaron");
-  const [category, setCategory] = useState("Two-Wheeler");
+  const [categories, setCategories] = useState([]);
   const [itemCode, setItemCode] = useState("");
   const [voltage, setVoltage] = useState("");
   const [amphere, setAmphere] = useState("");
@@ -54,12 +26,63 @@ const EditItem = () => {
   const navigate = useNavigate();
   const {setShowSidebar} = useSidebarContextHook()
 
+  useEffect(() => {
+    fetchData();
+  }, [id]);
+
+  const  fetchData = async () => {
+    await fetch(`${import.meta.env.VITE_SERVER}/api/v1/products/all/${id}`).then(
+      (response) => {
+        response.json().then((itemData) => {
+          setName(itemData.name);
+          setMrp(itemData.boxPrice);
+          setSellingPrice(itemData.sellingPrice);
+          setVehicles(itemData.vehicles);
+          setOldBatteryPrice(itemData.oldBatteryPrice);
+          setBrand(itemData.brand);
+          setCategories(itemData.category);
+          setItemCode(itemData.itemCode);
+          setVoltage(itemData.voltage);
+          setAmphere(itemData.amphere);
+          setTotalWarranty(itemData.totalWarranty);
+          setFreeWarranty(itemData.freeWarranty);
+          setProRataWarranty(itemData.proRataWarranty);
+        });
+      }
+    );
+  };
+
+  const checkboxes = document.querySelectorAll(".checkboxes")
+
+  if (categories.length !== 0) {
+    categories.forEach((cats)=>{
+      checkboxes.forEach((checkbox)=>{
+        if(checkbox.value === cats){
+          checkbox.checked = true
+        }
+        
+      })
+    })
+  }
+
   const handleNavigate = (e) => {
     e.preventDefault();
     window.scrollTo(0, 0);
     setShowSidebar(false)
     navigate("/manage-store");
   };
+
+  const handleChecked = (e) => {
+    const { value, checked } = e.target;
+
+    if (checked) {
+      setCategories([...categories, value]);
+    }
+    if (checked === false) {
+      setCategories(categories.filter((category) => category !== value));
+    }
+  };
+ 
 
   const updateItem = async (e) => {
     e.preventDefault();
@@ -73,7 +96,7 @@ const EditItem = () => {
       data.set("vehicles", vehicles);
       data.set("oldBatteryPrice", oldBatteryPrice);
       data.set("brand", brand);
-      data.set("category", category);
+      categories.forEach((cats) => data.append("category[]",cats))
       data.set("itemCode", itemCode);
       data.set("voltage", voltage);
       data.set("amphere", amphere);
@@ -134,22 +157,61 @@ const EditItem = () => {
             <option>Exide</option>
             <option>PowerZone</option>
             <option>Luminous</option>
+            <option>Okaya</option>
+            <option>SFsonic</option>
             <option>Microtek</option>
           </select>
         </div>
 
-        <div className="form-row">
+        <div className="form-row checkbox-container">
           <h1>Select Category</h1>
-          <select
-            onChange={(e) => setCategory(e.target.value)}
-            value={category}
-          >
-            <option>Two-Wheeler</option>
-            <option>Three-Wheeler</option>
-            <option>Passenger-Vehicle</option>
-            <option>Heavy-Vehicle</option>
-            <option>Inverter&Battery</option>
-          </select>
+          <div className="check-options-box">
+            <div className="check-options-row">
+              <input
+                type="checkbox"
+                value="Two Wheelers"
+                className="checkboxes"
+                onChange={(e) => handleChecked(e)}
+              />{" "}
+              <p>Two Wheelers</p>
+            </div>
+            <div className="check-options-row">
+              <input
+                type="checkbox"
+                value="Three Wheelers"
+                className="checkboxes"
+                onChange={(e) => handleChecked(e)}
+              />{" "}
+              <p>Three Wheelers</p>
+            </div>
+            <div className="check-options-row">
+              <input
+                type="checkbox"
+                value="Passenger Vehicles"
+                className="checkboxes"
+                onChange={(e) => handleChecked(e)}
+              />{" "}
+              <p>Passenger Vehicles</p>
+            </div>
+            <div className="check-options-row">
+              <input
+                type="checkbox"
+                value="Heavy Vehicles"
+                className="checkboxes"
+                onChange={(e) => handleChecked(e)}
+              />{" "}
+              <p>Heavy Vehicles</p>
+            </div>
+            <div className="check-options-row">
+              <input
+                type="checkbox"
+                value="Inverter Battery"
+                className="checkboxes"
+                onChange={(e) => handleChecked(e)}
+              />{" "}
+              <p>Inverter Battery</p>
+            </div>
+          </div>
         </div>
 
         <div className="form-row">

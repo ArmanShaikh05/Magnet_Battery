@@ -134,6 +134,13 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover{
+        border: 3px solid $primary-color;
+    }
     
     .store-item-img{
         width: 18%;

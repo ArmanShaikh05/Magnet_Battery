@@ -179,6 +179,8 @@ const ManageStore = () => {
                   <option value="Exide">Exide</option>
                   <option value="PowerZone">PowerZone</option>
                   <option value="Luminous">Luminous</option>
+                  <option value="Okaya">Okaya</option>
+                  <option value="SFsonic">SFsonic</option>
                   <option value="Microtek">Microtek</option>
                 </select>
               </div>

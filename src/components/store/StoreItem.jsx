@@ -5,7 +5,7 @@ const StoreItem = ({itemData}) => {
   const navigate = useNavigate()
   const discount = (((itemData.boxPrice - itemData.sellingPrice) / itemData.boxPrice)*100).toFixed(1)
   return (
-    <div className="store-item">
+    <div className="store-item" onClick={()=>{window.scrollTo(0,0),navigate(`/item/${itemData._id}`)}}>
         <div className="store-item-img"><img src={itemData.image.url} alt="amaronBattery" /></div>
         <div className="item-details">
             <h1>{itemData.name}</h1>
