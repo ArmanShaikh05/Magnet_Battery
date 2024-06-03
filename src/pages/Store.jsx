@@ -156,6 +156,7 @@ const Store = () => {
           </div>
         </div>
       </div>
+      
       <div className="filter-container">
         <div className="container">
           <div className="search-area">
