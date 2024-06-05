@@ -1,0 +1,53 @@
+@media screen and (max-width: 750px) {
+  .battery-filter-box {
+    flex-direction: column;
+    gap: 2rem;
+
+    .filter-container {
+      width: 100% !important;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .battery-filter-box {
+    .filter-container {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    > button {
+      width: 40%;
+      height: 4rem !important;
+
+      font-size: 1.4rem;
+    }
+  }
+
+  .battery-area{
+    >h1{
+        font-size: 1.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .battery-filter-box {
+    .filter-container {
+      grid-template-columns: 1fr;
+
+      .filter {
+        margin: 0.8rem 0;
+        > h2 {
+          text-align: left;
+        }
+      }
+    }
+
+    > button {
+      width: 80%;
+    }
+  }
+}

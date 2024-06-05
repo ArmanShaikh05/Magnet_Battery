@@ -188,6 +188,7 @@ section{
 @import '../styles/additem.scss';
 @import '../styles/authentication.scss';
 @import '../styles/footerlinks.scss';
+@import '../styles/findbattery.scss';
 
 
 // IMORTING MEDIA QUERIES
@@ -195,4 +196,5 @@ section{
 @import './mediaQueries/contactUsMediaQuery.scss';
 @import './mediaQueries/storeMediaQuery.scss';
 @import './mediaQueries/singleItemMediaQuery.scss';
+@import './mediaQueries/findBatteryMediaQuery.scss';
 

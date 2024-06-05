@@ -101,6 +101,7 @@ const Navbar = () => {
         <div className="navlinks">
           <Link to="/">Home</Link>
           <Link to={"/contact"}>Contact Us</Link>
+          <Link to={"/find-battery"}>Find Battery</Link>
           { currentUser?.uid === import.meta.env.VITE_ADMIN_UID?<Link onClick={(e)=>handleManageStoreNavigate(e)} >Manage Store</Link>:null}
           <button className="btn" onClick={(e) => handleNavigate(e)}>
             Our Store
@@ -152,6 +153,15 @@ const Navbar = () => {
               to={"/contact"}
             >
               Contact Us
+            </Link>
+            <Link
+              onClick={() => {
+                window.scrollTo(0, 0);
+                setShowSidebar(false);
+              }}
+              to={"/find-battery"}
+            >
+              Find Battery
             </Link>
             {currentUser?.uid === import.meta.env.VITE_ADMIN_UID?<Link onClick={(e)=>handleManageStoreNavigate(e)} to={"/manage-store"}>Manage Store</Link>:null}
             <button className="btn" onClick={(e) => handleNavigate(e)}>

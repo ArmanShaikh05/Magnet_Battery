@@ -1,0 +1,71 @@
+.find-battery-container{
+    min-height: 100vh;
+    >h1{
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .battery-filter-box{
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2rem;
+        border-bottom: 3px solid $primary-color;
+
+        .filter-container{
+
+            display: flex;
+            width: 85%;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            .filter{
+    
+                >h2{
+                    text-transform: uppercase;
+                    word-spacing: 5px;
+                }
+    
+                >select{
+                    height: 2.5rem;
+                    width: 100%;
+                    text-transform: capitalize;
+                    border: 2px solid transparent;
+                    outline: none;
+    
+                    &:focus,&:active,&:focus-within,&:focus-visible{
+                        border: 2px solid $primary-color;
+                    }
+                }
+            }
+        }
+
+        >button{
+            height: 70%;
+        }
+    }
+
+    .battery-area{
+        height: 100%;
+
+        >h1{
+            text-align: left;
+            margin: 2rem 0;
+            text-transform: capitalize;
+        }
+
+        .store-item .item-details {
+            align-items: flex-start;
+
+            .compatible-vehicles p {
+                font-size: 1.25rem;
+                width: max-content;
+            }
+        }
+    }
+}
+

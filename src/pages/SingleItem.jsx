@@ -58,7 +58,7 @@ const SingleItem = () => {
     <div className="single-item">
         {loading ? <Loader /> : <div className="container single-item-container">
           <div className="go-back-btn">
-            <button className="btn" onClick={()=>navigate(`/store/${path}`)}> Go back </button>
+            <button className="btn" onClick={()=>navigate(`/store/${path}`)}> Go To Store </button>
           </div>
           <h1>
             {name}

@@ -29,6 +29,8 @@ const ResetPassword = lazy(()=>import("./pages/ResetPassword"))
 const TermsAndConditions = lazy(()=>import("./pages/TermsAndConditions"))
 const PrivacyPolicy = lazy(()=>import("./pages/PrivacyPolicy"))
 
+const FindBattery = lazy(()=>import("./pages/FindBattery"))
+
 
 // manage store item imports
 const ManageTwoWheelers = lazy(()=>import("./components/manage-Store/TwoWheelers"))
@@ -90,6 +92,8 @@ function App() {
 
           <Route path="/terms-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+          <Route path="/find-battery" element={<FindBattery />} />
 
         </Routes>
       <Footer />
