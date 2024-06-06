@@ -1,687 +1,687 @@
 // DESIGNING THE NAVBAR
-.navWithBg{
-    background-color: $primary-dark-variant;
+.navWithBg {
+  background-color: $primary-dark-variant;
 }
 
-.navWithoutBg{
-    background-color: transparent;
+.navWithoutBg {
+  background-color: transparent;
 }
 
-.navbar-container{
-    height: 6rem;
+.navbar-container {
+  height: 6rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  transition: $transition;
+  padding-inline: 2rem;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 15;
-    transition: $transition;
-    padding-inline: 2rem;
+    height: 6rem;
+    padding: 1.5rem 0;
 
-    .navbar{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 6rem;
-        padding: 1.5rem 0;
-       
-    
-        > a{
-            > img{
-                height: 9.3rem;
-                width: 9.3rem;
-                cursor: pointer;
-            }
-        }
-        
-    
-        > .navlinks{
-            width: 28rem;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            justify-content: flex-end;
-            gap: 1.5rem;
-            align-items: center;
-    
-            > a {
-                font-size: 1.4rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                color: $black;
-    
-                
-            }
-
-            
-        }
-
-        .ghost-btn{
-            padding: 0.5rem 1rem;
-            font-size: 1.1rem;
-            border-radius: 0.5rem;
-        }
-
-        .btn{
-            padding: 0.5rem 1rem;
-            font-size: 1.1rem;
-            border-radius: 0.5rem;
-        }
+    > a {
+      > img {
+        height: 9.3rem;
+        width: 9.3rem;
+        cursor: pointer;
+      }
     }
-    
+
+    > .navlinks {
+      width: 28rem;
+      width: 80%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      align-items: center;
+
+      > a {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $black;
+      }
+    }
+
+    .ghost-btn {
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+    }
+  }
 }
 
 // DESIGNING THE SIDEBAR
-.hamburger-menu{
+.hamburger-menu {
+  height: 2rem;
+  width: 2rem;
+  display: none;
+}
+
+.inactive {
+  right: -60% !important;
+}
+
+.sidebar {
+  position: fixed;
+  width: 60%;
+  top: 0;
+  right: 0;
+  background-color: $primary-dark-variant;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: $transition;
+
+  > svg {
     height: 2rem;
     width: 2rem;
-    display: none;
-}
-    
+    position: relative;
+    top: 3%;
+    right: 10%;
+  }
 
-    .inactive{
-        right:-60% !important
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+    > a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: black;
     }
 
-    .sidebar{
-        position: fixed;
-        width: 60%;
-        top: 0;
-        right: 0;
-        background-color: $primary-dark-variant;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        transition: $transition;
-
-        >svg{
-            height: 2rem;
-            width: 2rem;
-            position: relative;
-            top: 3%;
-            right: 10%;
-        }
-
-        .sidebar-links{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            margin-top: 4rem;
-
-            >a{
-                font-size: 1.4rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                color: black;
-            }
-
-            > .btn{
-                width: 65%;
-                font-size: 1.4rem;
-            }
-        }
-    
+    > .btn {
+      width: 65%;
+      font-size: 1.4rem;
+    }
+  }
 }
 
-
 // DESIGNING THE HERO SECTION
-.hero{
-    height: calc(100vh - 6rem);
+.hero {
+  height: calc(100vh - 6rem);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > img {
+    width: 45%;
+    aspect-ratio: 16 / 12;
+  }
+
+  > .hero-data {
+    width: 34rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1.5rem;
+
+    .hero-text {
+      width: 100%;
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      > h1 {
+        font-size: 4.375rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 114%;
+      }
+
+      > p {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+    }
+
+    .hero-btns {
+      width: 100%;
+      display: flex;
+      gap: 1.5rem;
+
+      .btn {
+        font-size: 1.4rem;
+        padding: 0.75rem 1.87rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+// DESIGNING THE SERVE YOU PAGE
+.services {
+  background-color: $white;
+  width: 100%;
+  height: 18.75rem;
+  padding-top: 2rem;
+  margin: 4rem 0;
+
+  > div {
+    height: 14.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > h1 {
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 1.9rem;
+    }
+
+    .service-box-container {
+      height: max-content;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .slick-list {
+        width: 100%;
+
+        .slict-track {
+          width: 100% !important;
+        }
+
+        .service-box {
+          min-height: 6.75rem !important;
+          width: max-content !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          cursor: pointer !important;
+
+          > p {
+            font-family: "Inter";
+            font-size: 1rem;
+            margin-top: 0.8rem;
+            text-transform: capitalize;
+            text-align: center;
+          }
+        }
+      }
+
+      > .service-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// DESIGNING OUR BRANCHES SECTION
+section {
+  text-align: center;
+  position: relative;
+  margin: 4rem 0;
+
+  > h1 {
+    font-weight: 700;
+    font-size: 2.81rem;
+    text-transform: uppercase;
+  }
+
+  .branch-box {
+    height: 23rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 2;
+
+    .branch-img {
+      height: 23rem;
+      width: 47%;
+      background: url("../assets/branch1.png");
+      border-radius: 15px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &:nth-child(2) {
+        background: url("../assets/branch2.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .branch-text {
+      width: 45%;
+      height: 19.75rem;
+
+      > h1 {
+        font-weight: 700;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        line-height: 100%;
+        text-align: left;
+        margin: 1rem 0;
+      }
+
+      > p {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        text-align: justify;
+        line-height: 140%;
+
+        &:nth-child(3) {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .branch-text-bg {
+    background-color: $primary-dark-variant;
+    height: 35%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 12%;
+    z-index: 1;
+    border-radius: 5rem 0 0 5rem;
+  }
+
+  .bg-2 {
+    left: 0;
+    border-radius: 0 5rem 5rem 0;
+    top: calc(23rem + 12% + 6rem);
+  }
+}
+
+// DESIGNING THE BRANDS WE DEAL IN SECTION
+.brands {
+  background-color: $white;
+  width: 100%;
+  height: 18.75rem;
+  padding-top: 2rem;
+  margin: 4rem 0;
+
+  > div {
+    height: 14.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > h1 {
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 1.9rem;
+    }
+
+    .brands-box-container {
+      height: 9rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .slick-list{
+        width: 100%;
+      }
+
+    }
+  }
+}
+
+// DESIGNING WHY CHOOSE US SECTION
+.features {
+  text-align: center;
+  margin: 4rem 0;
+  > div {
+    > h1 {
+      font-weight: 700;
+      font-size: 2.81rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .features-container {
+      display: flex;
+      flex-direction: column;
+
+      .feature-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        margin-bottom: 2rem;
+        align-items: center;
+
+        > img {
+          height: 11rem;
+          width: 11rem;
+        }
+
+        .feature-text {
+          height: 13.5rem;
+          border-radius: 1rem;
+          background-color: $primary-dark-variant;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 1.5rem;
+
+          > h1 {
+            font-family: "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+          }
+
+          > p {
+            font-family: "Inter", sans-serif;
+            font-size: 1rem;
+            line-height: 170%;
+            text-align: justify;
+            padding: 0 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// DESIGNING THE TESTIMONIAL SECTION
+.testimonial {
+  margin: 4rem 0;
+  > div {
+    width: 95%;
+    > h1 {
+      font-weight: 700;
+      font-size: 2.81rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 1rem;
+      row-gap: 3rem;
+
+      .slick-slide > div {
+        margin: 0 1rem;
+      }
+
+      .testimonial-box {
+        background: url("../assets/testimonial.png");
+        width: 21rem;
+        height: 29.5rem;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.3);
+
+        .testimonial-text {
+          width: 80%;
+          height: 10.75rem;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          left: 11.5%;
+          top: 10%;
+
+          .leftComma {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 10%;
+            aspect-ratio: 1 / 1;
+          }
+
+          .rightComma {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 10%;
+            aspect-ratio: 1 / 1;
+          }
+
+          > p {
+            font-family: "Inter", sans-serif;
+            font-weight: normal;
+            font-size: 0.75rem;
+            line-height: 170%;
+            // width: 85%;
+            padding-inline: 10%;
+            text-align: center;
+          }
+        }
+
+        .profile-img {
+          width: 4rem;
+          height: 4rem;
+          border-radius: 50%;
+          background: url("../assets/profileImg.png");
+          background-size: cover;
+          border: 5px solid #dcd8d8;
+          position: absolute;
+          left: 40%;
+          bottom: 22%;
+        }
+
+        .profile-details {
+          width: max-content;
+          height: 3.5rem;
+          margin-bottom: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          position: absolute;
+          bottom: 0;
+          left: 25%;
+
+          > h1 {
+            font-family: "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+          }
+
+          > p {
+            font-family: "Inter", sans-serif;
+            font-weight: normal;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+// DESIGNING THE FAQ SECTION
+.faq {
+  > div {
+    > h1 {
+      font-weight: 700;
+      font-size: 2.81rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .faq-box {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 3rem;
+
+        .faq-headings {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1rem;
+          background-color: $primary-color;
+          border-radius: 1.25rem 1.25rem 0 0;
+          padding: 0.8rem 1.5rem;
+          cursor: pointer;
+          transition: $transition;
+
+          > p {
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            text-align: left;
+          }
+        }
+
+        .rounded {
+          border-radius: 1.25rem;
+        }
+
+        .faq-body {
+          background-color: $seconday-light;
+
+          transition: $transition;
+
+          > p {
+            width: 80%;
+            font-family: "Inter", sans-serif;
+            font-size: 1.25rem;
+            line-height: 170%;
+            text-align: justify;
+            margin-left: calc(38px + 1rem);
+            padding: 1rem 0 2rem 0;
+            text-transform: capitalize;
+          }
+        }
+
+        .hideAnswer {
+          height: 0;
+          > p {
+            display: none;
+          }
+        }
+
+        .showAnswer {
+          height: 10rem;
+          border-radius: 0 0 1.25rem 1.25rem;
+
+          > p {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// DESIGNING THE FOOTER
+.footer {
+  background-color: $footer-gray;
+  .container {
+    min-height: 15.25rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .footer-line-1 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $white;
+      padding: 0 1rem;
+
+      > img {
+        height: 7.5rem;
+        width: 7.5rem;
+      }
+
+      > p {
+        width: 22rem;
+        text-align: right;
+        font-family: "inter", sans-serif;
+        font-weight: normal;
+        font-size: 1.125rem;
+        line-height: 170%;
+        text-transform: capitalize;
+      }
+    }
+
+    .footer-line-2 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $white;
+      padding: 0 1rem;
+
+      .box1,
+      .box2 {
+        display: flex;
+        gap: 1rem;
+
+        > p,
+        a {
+          font-family: "inter", sans-serif;
+          font-weight: normal;
+          font-size: 1.125rem;
+          line-height: 170%;
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .footer-2 {
+    height: 4.25rem;
+    width: 100%;
+    background-color: $footer-black;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    > img{
-        width: 45%;
-        aspect-ratio: 16 / 12;
+    > p {
+      font-family: "inter", sans-serif;
+      font-weight: normal;
+      font-size: 1.125rem;
+      color: $white;
     }
-
-    >.hero-data{
-        width: 34rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-around;
-        gap: 1.5rem;
-
-        .hero-text{
-            width: 100%;
-            height: max-content;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            >h1{
-                font-size: 4.375rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                line-height: 114%;
-            }
-
-            >p{
-                font-family: "Inter", sans-serif;
-                font-size: 1rem;
-                font-weight: normal;
-            }
-        }
-
-        .hero-btns{
-            width: 100%;
-            display: flex;
-            gap: 1.5rem;
-
-            .btn{
-                font-size: 1.4rem;
-                padding: 0.75rem 1.87rem;
-                border-radius: 1rem;
-            }
-            
-        }
-        
-    }
-}
-
-// DESIGNING THE SERVE YOU PAGE
-.services{
-    background-color: $white;
-    width: 100%;
-    height: 18.75rem;
-    padding-top: 2rem;
-    margin: 4rem 0;
-
-    >div{
-        height: 14.25rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        >h1{
-            font-weight: 600;
-            text-transform: capitalize;
-            font-size: 1.9rem;
-        }
-
-        .service-box-container{
-            height: max-content;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            >.service-box{
-                min-height: 6.75rem;
-                width: max-content;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-
-                >p{
-                    font-family: "Inter";
-                    font-size: 1rem;
-                    text-transform: capitalize;
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
-
-// DESIGNING OUR BRANCHES SECTION
-section{
-    text-align: center;
-    position: relative;
-    margin: 4rem 0;
-
-    >h1{
-        font-weight: 700;
-        font-size: 2.81rem;
-        text-transform: uppercase;
-    }
-
-    .branch-box{
-        height: 23rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 3rem;
-        margin-bottom: 6rem;
-        position: relative;
-        z-index: 2;
-        
-
-        .branch-img{
-            height: 23rem;
-            width: 47%;
-            background: url("../assets/branch1.png");
-            border-radius: 15px;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            &:nth-child(2){
-                background: url("../assets/branch2.png");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-        }
-
-        .branch-text{
-            width: 45%;
-            height: 19.75rem;
-
-            >h1{
-                font-weight: 700;
-                font-size: 2.5rem;
-                text-transform: uppercase;
-                line-height: 100%;
-                text-align: left;
-                margin: 1rem 0;
-            }
-
-            >p{
-                font-family: "Inter",sans-serif;
-                font-size: 1rem;
-                text-align: justify;
-                line-height: 140%;
-
-                &:nth-child(3){
-                    margin-top: 1rem;
-                }
-            }
-        }
-    }
-
-    .branch-text-bg{
-        background-color: $primary-dark-variant;
-        height: 35%;
-        width: 50%;
-        position: absolute;
-        right: 0;
-        top: 12%;
-        z-index: 1;
-        border-radius: 5rem 0 0 5rem;
-    }
-
-    .bg-2{
-        left: 0;
-        border-radius: 0 5rem 5rem 0;
-        top: calc(23rem + 12% + 6rem);
-    }
-}
-
-// DESIGNING THE BRANDS WE DEAL IN SECTION
-.brands{
-    background-color: $white;
-    width: 100%;
-    height: 18.75rem;
-    padding-top: 2rem;
-    margin: 4rem 0;
-
-    >div{
-        height: 14.25rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        >h1{
-            font-weight: 600;
-            text-transform: capitalize;
-            font-size: 1.9rem;
-        }
-
-        .brands-box-container{
-            height: 9rem;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            >img{
-                aspect-ratio: 1 / 1;
-                width: 20%;
-            }
-
-            
-        }
-    }
-}
-
-// DESIGNING WHY CHOOSE US SECTION
-.features{
-    text-align: center;
-    margin: 4rem 0;
-    >div{
-
-        >h1{
-            font-weight: 700;
-            font-size: 2.81rem;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .features-container{
-            display: flex;
-            flex-direction: column;
-
-            .feature-box{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 5rem;
-                margin-bottom: 2rem;
-                align-items: center;
-
-                >img{
-                    height: 11rem;
-                    width: 11rem;
-                }
-
-                .feature-text{
-                    height: 13.5rem;
-                    border-radius: 1rem;
-                    background-color: $primary-dark-variant;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    gap: 1.5rem;
-                    
-                    >h1{
-                        font-family: "Inter",sans-serif;
-                        font-weight: 700;
-                        font-size: 1.5rem;
-                        text-transform: uppercase;
-                    }
-
-                    >p{
-                        font-family: "Inter",sans-serif;
-                        font-size: 1rem;
-                        line-height: 170%;
-                        text-align: justify;
-                        padding: 0 1.5rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// DESIGNING THE TESTIMONIAL SECTION
-.testimonial{
-    margin: 4rem 0;
-    > div{
-
-        >h1{
-            font-weight: 700;
-            font-size: 2.81rem;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .testimonial-container{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 1rem;
-            row-gap: 3rem;
-
-
-            .testimonial-box{
-                background: url("../assets/testimonial.png");
-                width: 21rem;
-                height: 26.5rem;
-                background-size: cover;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                align-items: center;
-                position: relative;
-                box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.3);
-                
-
-                .testimonial-text{
-                    width: 80%;
-                    height: 10.75rem;
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    left: 11.5%;
-                    top: 10%;
-
-                    .leftComma{
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        height: 10%;
-                        aspect-ratio: 1 / 1;
-                    }
-
-                    .rightComma{
-                        position: absolute;
-                        right: 0;
-                        bottom: 0;
-                        height: 10%;
-                        aspect-ratio: 1 / 1;
-                    }
-
-                    >p{
-                        font-family: "Inter",sans-serif;
-                        font-weight: normal;
-                        font-size: 0.75rem;
-                        line-height: 170%;
-                        // width: 85%;
-                        padding-inline: 10%;
-                        text-align: center;
-                    }
-                }
-
-                .profile-img{
-                    width: 4rem;
-                    height: 4rem;
-                    border-radius: 50%;
-                    background: url("../assets/profileImg.png");
-                    background-size: cover;
-                    border: 5px solid #dcd8d8;
-                    position: absolute;
-                    left: 40%;
-                    bottom: 22%;
-                }
-
-                .profile-details{
-                    width: max-content;
-                    height: 3.5rem;
-                    margin-bottom: 1.5rem;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-around;
-
-                    >h1{
-                        font-family: "Inter",sans-serif;
-                        font-weight: 700;
-                        font-size: 1rem;
-                        text-transform: uppercase;
-                    }
-
-                    >p{
-                        font-family: "Inter",sans-serif;
-                        font-weight: normal;
-                        font-size: 0.75rem;
-                        text-transform: uppercase;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-// DESIGNING THE FAQ SECTION
-.faq{
-    > div{
-
-        >h1{
-            font-weight: 700;
-            font-size: 2.81rem;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .faq-container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-            .faq-box{
-                width: 80%;
-                margin: auto;
-                margin-bottom: 3rem;
-                
-
-                .faq-headings{
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    gap: 1rem;
-                    background-color: $primary-color;
-                    border-radius: 1.25rem 1.25rem 0 0;
-                    padding: 0.8rem 1.5rem;
-                    cursor: pointer;
-                    transition: $transition;
-
-                    >p{
-                        font-weight: 600;
-                        font-size: 1.4rem;
-                        text-transform: uppercase;
-                        text-align: left;
-                    }
-
-                    
-                }
-
-                .rounded{
-                    border-radius: 1.25rem;
-                }
-
-                .faq-body{
-                    background-color: $seconday-light;
-                    
-                    transition: $transition;
-
-                    >p{
-                        width: 80%;
-                        font-family: "Inter",sans-serif;
-                        font-size: 1.25rem;
-                        line-height: 170%;
-                        text-align: justify;
-                        margin-left: calc(38px + 1rem);
-                        padding: 1rem 0 2rem 0;
-                        text-transform: capitalize;
-                    }
-                }
-
-                .hideAnswer{
-                    height: 0;                    
-                    >p{
-                        display: none;
-                    }
-                }
-
-                .showAnswer{
-                    height: 10rem;
-                    border-radius: 0 0 1.25rem 1.25rem;
-
-                    >p{
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-// DESIGNING THE FOOTER
-.footer{
-    background-color: $footer-gray;
-    .container{
-        min-height: 15.25rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .footer-line-1{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: $white;
-            padding: 0 1rem;
-
-            >img{
-                height: 7.5rem;
-                width: 7.5rem;
-            }
-
-            >p{
-                width: 22rem;
-                text-align: right;
-                font-family: "inter",sans-serif;
-                font-weight: normal;
-                font-size: 1.125rem;
-                line-height: 170%;
-                text-transform: capitalize;
-            }
-        }
-
-        .footer-line-2{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: $white;
-            padding: 0 1rem;
-
-            .box1,.box2{
-                display: flex;
-                gap: 1rem;
-
-                >p,a{
-                    font-family: "inter",sans-serif;
-                    font-weight: normal;
-                    font-size: 1.125rem;
-                    line-height: 170%;
-                    text-decoration: none;
-                    color: $white;
-                }
-            }
-        }
-    }
-
-
-
-    .footer-2{
-        height: 4.25rem;
-        width: 100%;
-        background-color: $footer-black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        >p{
-            font-family: "inter",sans-serif;
-            font-weight: normal;
-            font-size: 1.125rem;
-            color: $white;
-        }
-    }
+  }
 }
