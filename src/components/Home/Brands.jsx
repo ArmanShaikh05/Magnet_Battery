@@ -10,8 +10,14 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom"
+import { useGlobalContextHook, useSidebarContextHook } from "../../context/contextHooks"
 
 const Brands = () => {
+
+  const navigate = useNavigate()
+  const { setBrand, setPath} = useGlobalContextHook();
+  const { setShowSidebar } = useSidebarContextHook();
 
   var settings = {
     dots: true,
@@ -50,13 +56,20 @@ const Brands = () => {
         <div className="container">
             <h1 className="underlined-text"> Brands We Deal In</h1>
             <Slider {...settings} className="brands-box-container">
-                <img src={amaron} alt="amaron" />
-                <img src={exide} alt="exide" />
-                <img src={powerzone} alt="powerzone" />
-                <img src={luminous} alt="luminous" />
-                <img src={microtek} alt="microtek" />
-                <img src={okaya} alt="okaya" />
-                <img src={sfSonic} alt="sfSonic" />
+                <img  src={amaron} alt="amaron" onClick={()=>{navigate("/store/");setBrand("Amaron");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
+                <img src={exide} alt="exide" onClick={()=>{navigate("/store/");setBrand("Exide");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
+                <img src={powerzone} alt="powerzone" onClick={()=>{navigate("/store/");setBrand("PowerZone");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
+                <img src={luminous} alt="luminous" onClick={()=>{navigate("/store/");setBrand("Luminous");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
+                <img src={microtek} alt="microtek" onClick={()=>{navigate("/store/");setBrand("Microtek");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
+                <img src={okaya} alt="okaya" onClick={()=>{navigate("/store/");setBrand("Okaya");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
+                <img src={sfSonic} alt="sfSonic" onClick={()=>{navigate("/store/");setBrand("SFsonic");setPath("");setShowSidebar(false);window.scrollTo(0,0)}} />
+
             </Slider>
         </div>
     </div>

@@ -10,12 +10,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {useNavigate} from "react-router-dom"
-import { useGlobalContextHook } from '../../context/contextHooks'
+import { useGlobalContextHook, useSidebarContextHook } from '../../context/contextHooks'
 
 const ServeYou = () => {
 
     const navigate = useNavigate()
     const { setPath } = useGlobalContextHook();
+    const { setShowSidebar } = useSidebarContextHook();
 
     var settings = {
         dots: false,
@@ -57,27 +58,27 @@ const ServeYou = () => {
             <h1 className="underlined-text"> Always ready to serve you</h1>
             <Slider {...settings} className="service-box-container">
 
-                <div className="service-box" onClick={()=>{navigate("/store/twoWheelers");setPath("twoWheelers");window.scrollTo(0,0)}}>
+                <div className="service-box" onClick={()=>{navigate("/store/twoWheelers");setPath("twoWheelers");setShowSidebar(false);window.scrollTo(0,0)}}>
                     <img src={twoWheeler} alt="" />
                     <p>Two Wheelers</p>
                 </div>
 
-                <div className="service-box" onClick={()=>{navigate("/store/threeWheelers");setPath("threeWheelers");window.scrollTo(0,0)}}>
+                <div className="service-box" onClick={()=>{navigate("/store/threeWheelers");setPath("threeWheelers");setShowSidebar(false);window.scrollTo(0,0)}}>
                     <img src={threeWheeler} alt="" />
                     <p>Three Wheelers</p>
                 </div>
 
-                <div className="service-box" onClick={()=>{navigate("/store/passengerVehicles");setPath("passengerVehicles");window.scrollTo(0,0)}}>
+                <div className="service-box" onClick={()=>{navigate("/store/passengerVehicles");setPath("passengerVehicles");setShowSidebar(false);window.scrollTo(0,0)}}>
                     <img src={passengerVehicle} alt="" />
                     <p>Passenger Vehicles</p>
                 </div>
 
-                <div className="service-box" onClick={()=>{navigate("/store/heavyVehicles");setPath("heavyVehicles");window.scrollTo(0,0)}}>
+                <div className="service-box" onClick={()=>{navigate("/store/heavyVehicles");setPath("heavyVehicles");setShowSidebar(false);window.scrollTo(0,0)}}>
                     <img src={heavyVehicle} alt="" />
                     <p>Heavy Vehicles</p>
                 </div>
 
-                <div className="service-box" onClick={()=>{navigate("/store/inverterBattery");setPath("inverterBattery");window.scrollTo(0,0)}}>
+                <div className="service-box" onClick={()=>{navigate("/store/inverterBattery");setPath("inverterBattery");setShowSidebar(false);window.scrollTo(0,0)}}>
                     <img src={inverter} alt="" />
                     <p>Inverter & Battery</p>
                 </div>

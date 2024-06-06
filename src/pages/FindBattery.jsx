@@ -4,12 +4,13 @@ import axios from "axios";
 import SectionLoader from "../components/SectionLoader";
 import StoreItem from "../components/store/StoreItem";
 import toast from "react-hot-toast";
+import { useSidebarContextHook } from "../context/contextHooks";
 
 const FindBattery = () => {
-  const [vehicle, setVehicle] = useState("Select");
-  const [brand, setBrand] = useState("Select");
-  const [model, setModel] = useState("Select");
-  const [type, setType] = useState("Select");
+  const [vehicle, setVehicle] = useState("");
+  const [brand, setBrand] = useState("");
+  const [model, setModel] = useState("");
+  const [type, setType] = useState("");
 
   const [batteries, setBatteries] = useState([]);
   const [vehicleArray, setVehicleArray] = useState([]);
@@ -20,6 +21,8 @@ const FindBattery = () => {
   const [loading, setLoading] = useState(false);
   const [showHeading, setShowHeading] = useState(false);
   const [heading, setHeading] = useState("");
+
+  const { setShowSidebar } = useSidebarContextHook();
 
 
   const changeVehicle = (e) => {
@@ -73,10 +76,12 @@ const FindBattery = () => {
 
   const findBattery = async (e) => {
     e.preventDefault();
+    setShowSidebar(false)
     if(!vehicle || !brand || !model || !type){
         toast.error("Choose All Fields")
         setBatteryData([])
         setShowHeading(false)
+        return
     }
     setLoading(true);
     let temp = [];
