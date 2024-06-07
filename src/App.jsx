@@ -30,6 +30,11 @@ const TermsAndConditions = lazy(()=>import("./pages/TermsAndConditions"))
 const PrivacyPolicy = lazy(()=>import("./pages/PrivacyPolicy"))
 
 const FindBattery = lazy(()=>import("./pages/FindBattery"))
+const AddInverter = lazy(()=>import("./pages/AddInverter"))
+const EditInverter = lazy(()=>import("./pages/EditInverter"))
+
+const Inverter = lazy(()=>import("./components/store/Inverter"))
+const SingleInverter = lazy(()=>import("./pages/SingleInverter"))
 
 
 // manage store item imports
@@ -39,6 +44,7 @@ const ManagePassengerVehicles = lazy(()=>import("./components/manage-Store/Passe
 const ManageHeavyVehicles = lazy(()=>import("./components/manage-Store/HeavyVehicles"))
 const ManageInverterBattery = lazy(()=>import("./components/manage-Store/InverterBattery"))
 const ManageAllitems = lazy(()=>import("./components/manage-Store/Allitems"))
+const ManageInverter = lazy(()=>import("./components/manage-Store/Inverter"))
 
 function App() {
 
@@ -63,10 +69,12 @@ function App() {
               <Route path="passengerVehicles" element={<PassengerVehicles />} />
               <Route path="heavyVehicles" element={<HeavyVehicles />} />
               <Route path="inverterBattery" element={<InverterBattery />} />
+              <Route path="inverter" element={<Inverter />} />
           </Route>
 
           
           <Route path="/item/:id" element={<SingleItem />} />
+          <Route path="/item/inverter/:id" element={<SingleInverter />} />
 
 
           <Route element={<AdminRoute isAuthenticated={currentUser ? true : false} isAdmin={currentUser?.uid === import.meta.env.VITE_ADMIN_UID ? true : false} />}>
@@ -78,9 +86,12 @@ function App() {
                   <Route path="passengerVehicles" element={<ManagePassengerVehicles />} />Manage
                   <Route path="heavyVehicles" element={<ManageHeavyVehicles />} />
                   <Route path="inverterBattery" element={<ManageInverterBattery />} />
+                  <Route path="inverter" element={<ManageInverter />} />
               </Route>
-              <Route path="/add" element={<AddItem />} />
+              <Route path="/add-battery" element={<AddItem />} />
+              <Route path="/add-inverter" element={<AddInverter />} />
               <Route path="/edit/:id" element={<EditItem />} />
+              <Route path="/edit/inverter/:id" element={<EditInverter />} />
           </Route>
 
 

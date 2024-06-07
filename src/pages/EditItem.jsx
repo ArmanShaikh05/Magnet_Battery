@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSidebarContextHook } from "../context/contextHooks";
+import { useGlobalContextHook, useSidebarContextHook } from "../context/contextHooks";
 
 const EditItem = () => {
   const id = useParams().id;
@@ -25,6 +25,7 @@ const EditItem = () => {
 
   const navigate = useNavigate();
   const {setShowSidebar} = useSidebarContextHook()
+  const {path} = useGlobalContextHook()
 
   useEffect(() => {
     fetchData();
@@ -69,7 +70,7 @@ const EditItem = () => {
     e.preventDefault();
     window.scrollTo(0, 0);
     setShowSidebar(false)
-    navigate("/manage-store");
+    navigate(`/manage-store/${path}`);
   };
 
   const handleChecked = (e) => {
@@ -112,7 +113,7 @@ const EditItem = () => {
         loading: "Updating Item",
         success: <b>Item Updated</b>,
         error: <b>Item Not Updated</b>
-      }).then(()=> {window.scrollTo(0,0);navigate("/manage-store");setDisable(false)}).catch((error)=>{
+      }).then(()=> {window.scrollTo(0,0);navigate(`/manage-store/${path}`);setDisable(false)}).catch((error)=>{
         toast.error(error.message)
         setDisable(false)
       })
@@ -205,7 +206,7 @@ const EditItem = () => {
             <div className="check-options-row">
               <input
                 type="checkbox"
-                value="Inverter Battery"
+                value="InverterBattery"
                 className="checkboxes"
                 onChange={(e) => handleChecked(e)}
               />{" "}
@@ -349,3 +350,5 @@ const EditItem = () => {
 };
 
 export default EditItem;
+
+

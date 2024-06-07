@@ -3,7 +3,8 @@ import twoWheeler from "../assets/twoWheeler.svg";
 import threeWheeler from "../assets/threeWheeler.svg";
 import heavyVehicle from "../assets/heavyVehicle.svg";
 import passengerVehicle from "../assets/PassengerVehicle.svg";
-import inverter from "../assets/inverterBattery.svg";
+import inverterBattery from "../assets/inverterBattery.svg";
+import inverter from "../assets/inverterUps.svg";
 import searchIcon from "../assets/searchIcon.svg";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
@@ -11,6 +12,11 @@ import {
   useSidebarContextHook,
 } from "../context/contextHooks";
 import { useEffect, useState } from "react";
+
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Store = () => {
   const navigate = useNavigate();
@@ -30,130 +36,205 @@ const Store = () => {
     } else if (path === "passengerVehicles") {
       document.getElementById("passengerVehicle").setAttribute("checked", "true");
     } else if (path === "inverterBattery") {
+      document.getElementById("inverterBattery").setAttribute("checked", "true");
+    }else if (path === "inverter") {
       document.getElementById("inverter").setAttribute("checked", "true");
     }
   }, [path]);
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 660,
+        settings: {
+            dots:true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 540,
+        settings: {
+            dots:true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 370,
+        settings: {
+            dots:true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+    ]
+  };
 
   return (
     <div className="store-page">
       <div className="services store">
         <div className="container">
           <h1 className="underlined-text">Looking For</h1>
-          <div className="store-container service-box-container ">
-            <input
-              type="radio"
-              className="radio-btns"
-              name="storeItemCategory"
-              id="allitems"
-            />
-            <label
-              htmlFor="allitems"
-              onClick={() => {
-                setShowSidebar(false);
-                setPath("");
-                navigate("/store/");
-              }}
-              className="service-box store-cat"
-            >
-              <img src={warehouse} alt="" />
-              <p>All Items</p>
-            </label>
+          <Slider {...settings} className="store-container service-box-container ">
 
-            <input
-              type="radio"
-              className="radio-btns"
-              name="storeItemCategory"
-              id="twowheeler"
-            />
-            <label
-              htmlFor="twowheeler"
-              onClick={() => {
-                setShowSidebar(false);
-                setPath("twoWheelers");
-                navigate("twoWheelers");
-              }}
-              className="service-box store-cat"
-            >
-              <img src={twoWheeler} alt="" />
-              <p>Two Wheelers</p>
-            </label>
+            <div>
+              <input
+                type="radio"
+                className="radio-btns"
+                name="storeItemCategory"
+                id="allitems"
+              />
+              <label
+                htmlFor="allitems"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("");
+                  navigate("/store/");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={warehouse} alt="" />
+                <p>All Items</p>
+              </label>
+            </div>
 
-            <input
-              type="radio"
-              className="radio-btns"
-              name="storeItemCategory"
-              id="threeWheeler"
-            />
-            <label
-              htmlFor="threeWheeler"
-              onClick={() => {
-                setShowSidebar(false);
-                setPath("threeWheelers");
-                navigate("threeWheelers");
-              }}
-              className="service-box store-cat"
-            >
-              <img src={threeWheeler} alt="" />
-              <p>Three Wheelers</p>
-            </label>
+            <div>
+              <input
+                type="radio"
+                className="radio-btns"
+                name="storeItemCategory"
+                id="twowheeler"
+              />
+              <label
+                htmlFor="twowheeler"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("twoWheelers");
+                  navigate("twoWheelers");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={twoWheeler} alt="" />
+                <p>Two Wheelers</p>
+              </label>
+            </div>
 
-            <input
-              type="radio"
-              name="storeItemCategory"
-              id="passengerVehicle"
-              className="radio-btns"
-            />
-            <label
-              htmlFor="passengerVehicle"
-              onClick={() => {
-                setShowSidebar(false);
-                setPath("passengerVehicles");
-                navigate("passengerVehicles");
-              }}
-              className="service-box store-cat"
-            >
-              <img src={passengerVehicle} alt="" />
-              <p>Passenger Vehicles</p>
-            </label>
+            <div>
+              <input
+                type="radio"
+                className="radio-btns"
+                name="storeItemCategory"
+                id="threeWheeler"
+              />
+              <label
+                htmlFor="threeWheeler"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("threeWheelers");
+                  navigate("threeWheelers");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={threeWheeler} alt="" />
+                <p>Three Wheelers</p>
+              </label>
+            </div>
 
-            <input
-              type="radio"
-              className="radio-btns"
-              name="storeItemCategory"
-              id="heavyVehicle"
-            />
-            <label
-              htmlFor="heavyVehicle"
-              onClick={() => {
-                setShowSidebar(false);
-                setPath("heavyVehicles");
-                navigate("heavyVehicles");
-              }}
-              className="service-box store-cat"
-            >
-              <img src={heavyVehicle} alt="" />
-              <p>Heavy Vehicles</p>
-            </label>
+            <div>
+              <input
+                type="radio"
+                name="storeItemCategory"
+                id="passengerVehicle"
+                className="radio-btns"
+              />
+              <label
+                htmlFor="passengerVehicle"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("passengerVehicles");
+                  navigate("passengerVehicles");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={passengerVehicle} alt="" />
+                <p>Passenger Vehicles</p>
+              </label>
+            </div>
 
-            <input
-              type="radio"
-              className="radio-btns"
-              name="storeItemCategory"
-              id="inverter"
-            />
-            <label
-              htmlFor="inverter"
-              onClick={() => {
-                setShowSidebar(false);
-                setPath("inverterBattery");
-                navigate("inverterBattery");
-              }}
-              className="service-box store-cat"
-            >
-              <img src={inverter} alt="" />
-              <p>Inverter & Battery</p>
-            </label>
-          </div>
+            <div>
+              <input
+                type="radio"
+                className="radio-btns"
+                name="storeItemCategory"
+                id="heavyVehicle"
+              />
+              <label
+                htmlFor="heavyVehicle"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("heavyVehicles");
+                  navigate("heavyVehicles");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={heavyVehicle} alt="" />
+                <p>Heavy Vehicles</p>
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                className="radio-btns"
+                name="storeItemCategory"
+                id="inverterBattery"
+              />
+              <label
+                htmlFor="inverterBattery"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("inverterBattery");
+                  navigate("inverterBattery");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={inverterBattery} alt="" />
+                <p>Inverter Battery</p>
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                className="radio-btns"
+                name="storeItemCategory"
+                id="inverter"
+              />
+              <label
+                htmlFor="inverter"
+                onClick={() => {
+                  setShowSidebar(false);
+                  setPath("inverter");
+                  navigate("inverter");
+                }}
+                className="service-box store-cat"
+              >
+                <img src={inverter} alt="" />
+                <p>Inverter UPS</p>
+              </label>
+            </div>
+
+           
+
+
+          </Slider>
         </div>
       </div>
       

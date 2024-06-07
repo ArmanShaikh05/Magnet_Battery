@@ -4,7 +4,7 @@ import DeleteOverlay from "../DeleteOverlay";
 import { useSidebarContextHook } from "../../context/contextHooks";
 
 /* eslint-disable react/prop-types */
-const ManageStoreItem = ({itemData,forceUpdate}) => {
+const ManageInverterItem = ({itemData,forceUpdate}) => {
   const navigate = useNavigate()
   const [showOverlay, setShowOverlay] = useState(false);
   const {setShowSidebar} = useSidebarContextHook()
@@ -18,7 +18,7 @@ const ManageStoreItem = ({itemData,forceUpdate}) => {
     id={itemData._id}
     name={itemData.name}
     forceUpdate={forceUpdate}
-    type={"Battery"}
+    type={"Inverter"}
   />
     <div className="store-item">
         <div className="store-item-img"><img src={itemData.image.url} alt="amaronBattery" /></div>
@@ -29,12 +29,9 @@ const ManageStoreItem = ({itemData,forceUpdate}) => {
                 <p className="item-price">₹ {itemData.sellingPrice} /-</p>
                 <p className="item-discount">({discount}% off)</p>
             </div>
-            <div className="compatible-vehicles">
-                <p><strong>Compatible with - </strong>{itemData.vehicles}</p>
-            </div>
 
             <div className="manage-btns">
-              <button className=" btn" onClick={()=>{window.scrollTo(0,0);setShowSidebar(false);navigate(`/edit/${itemData._id}`)}}>Edit Item</button>
+              <button className=" btn" onClick={()=>{window.scrollTo(0,0);setShowSidebar(false);navigate(`/edit/inverter/${itemData._id}`)}}>Edit Item</button>
               <button className="btn delete-btn" onClick={() => setShowOverlay(true)}>Delete Item</button>
             </div>
         </div>
@@ -43,4 +40,4 @@ const ManageStoreItem = ({itemData,forceUpdate}) => {
   )
 }
 
-export default ManageStoreItem
+export default ManageInverterItem

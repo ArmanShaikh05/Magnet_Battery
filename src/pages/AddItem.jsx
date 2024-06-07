@@ -3,6 +3,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useGlobalContextHook } from "../context/contextHooks";
 
 const AddItem = () => {
   const [disable, setDisable] = useState(false);
@@ -23,13 +24,14 @@ const AddItem = () => {
   const [file, setFile] = useState("");
 
   const [categories, setCategories] = useState([]);
+  const {path} = useGlobalContextHook()
 
   const navigate = useNavigate();
 
   const handleNavigate = (e) => {
     e.preventDefault();
     window.scrollTo(0, 0);
-    navigate("/manage-store");
+    navigate(`/manage-store/${path}`);
   };
 
   const handleChecked = (e) => {
@@ -119,7 +121,7 @@ const AddItem = () => {
           )
           .then(() => {
             window.scrollTo(0, 0);
-            navigate("/manage-store");
+            navigate(`/manage-store/${path}`);
             setDisable(false);
           })
           .catch((error) => {
@@ -209,7 +211,7 @@ const AddItem = () => {
             <div className="check-options-row">
               <input
                 type="checkbox"
-                value="Inverter Battery"
+                value="InverterBattery"
                 onChange={(e) => handleChecked(e)}
               />{" "}
               <p>Inverter Battery</p>

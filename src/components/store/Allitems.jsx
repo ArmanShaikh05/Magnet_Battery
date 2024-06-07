@@ -3,6 +3,7 @@ import StoreItem from "./StoreItem";
 import axios from "axios"
 import { useGlobalContextHook } from "../../context/contextHooks";
 import SectionLoader from "../SectionLoader";
+import InverterItem from "./InverterItem";
 
 const Allitems = () => {
 
@@ -17,7 +18,7 @@ const Allitems = () => {
 
   const fetchData = async() => {
     setLoading(true)
-    const response = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/products/all?search=${search}&brand=${brand}`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/products/all/combine?search=${search}&brand=${brand}`)
     setItemData(response.data)
     setLoading(false)
   }
@@ -26,7 +27,21 @@ const Allitems = () => {
 
   return (
     loading ? <SectionLoader /> : 
-      itemData ? itemData.map((item,index) => (<StoreItem key={index} itemData={item} />)) : <h1>No Items</h1>
+      itemData ? (
+        itemData.map((item) => {
+         return item.map((subitem, index) => {
+            if('oldBatteryPrice' in subitem) {
+              return  (<StoreItem key={index}  itemData={subitem} />)
+            }
+    
+            else {
+              return ( <InverterItem key={index} itemData={subitem} />)
+            }
+          })
+    
+          
+    })
+      ) : <h1>No Items</h1>
     
   )
 
