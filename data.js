@@ -12,10 +12,6 @@ const data = [
                 type:"petrol",
                 battery: ["BTX2.5", "XL2.5L-C"],
               },
-              {
-                type:"diesal",
-                battery: ["BTX2.5", "XL2.5L-C"],
-              },
 
             ],
           },
@@ -2535,7 +2531,427 @@ const data = [
         vehicles:[
 
           {
-            model: "Adrenofx (KS)",
+            model: "Classic 350 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: " Bullet 350 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: " Bullet 350 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+
+          {
+            model: "Bullet 500 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Bullet Deluxe (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Bullet STD (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+
+          {
+            model: "Electra (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Electra 350 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Electra 5S (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Himalayan 410 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Hunter 350 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Lightning 500 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Machismo 500 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Machismo A350 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Meteor 350 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Scram 411 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+
+          {
+            model: "Taurus (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Thunderbird (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Thunderbird 350 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Thunderbird X 350 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+        ]
+      },
+
+      {
+        brand:"SUZUKI",
+        vehicles:[
+
+          {
+            model: "Access 125 (BS6) (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ4", "XLTZ4"],
+              },
+            ],
+          },
+
+          {
+            model: "Access 125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Burgman Street 125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ4", "XLTZ4"],
+              },
+            ],
+          },
+
+          {
+            model: "GS150 R ",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "GS150R (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "GS150 R (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "GW250",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Gixer 150 (BS6) (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ4", "XLTZ4"],
+              },
+            ],
+          },
+
+          {
+            model: "Gixer 250 (BS6) (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ7", "XLTZ7"],
+              },
+            ],
+          },
+
+          {
+            model: "Gixer SF150 (BS6) (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ4", "XLTZ4"],
+              },
+            ],
+          },
+
+          {
+            model: "Gixer SF250 (BS6) (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ7", "XLTZ7"],
+              },
+            ],
+          },
+
+          {
+            model: "Hayate (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Hayate (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Heat (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Inazuma 250",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Intruder 150 (BS6) (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ4", "XLTZ4"],
+              },
+            ],
+          },
+
+          {
+            model: "Sling Shot Plus (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Supra (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Swish 125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Zeus (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Zeus 125X (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Zeus 125XU (KS)",
             type: [
               {
                 type:"petrol",
@@ -2546,6 +2962,1211 @@ const data = [
 
         ]
       },
+
+      {
+        brand:"TVS",
+        vehicles:[
+          {
+            model: "AX 100",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 200 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 200 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ7", "XLTZ7"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache 150 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache 160 FI (BS6) (ES)" ,
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache Hyper Edge",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 150",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 160 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 160 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ7", "XLTZ7"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR160 4V (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR160 FI 4V",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 160FI ",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 180 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR180 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 310 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Apache RTR 310S (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Centra (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Fiero (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fiero (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Fiero F2 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fiero F2 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Fiero F2 FX (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fiero FX (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Flame 110 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Flame 125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Jive 110 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Jupitor (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "Jupitor (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Jupitor Classic (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Jupitor Grand (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Jupitor ZX (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Jupitor Zx-Disc (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Max 100R (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Max 4R 125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "NTORQ 125 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "NTORQ 125 (BS4) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Phoenix 125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "RR 310 (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ9", "XLTZ9"],
+              },
+            ],
+          },
+
+          {
+            model: "Raedon (BS4) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ4", "XLTZ4"],
+              },
+            ],
+          },
+
+          {
+            model: "Raedon (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "Ronin (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ7", "XLTZ7"],
+              },
+            ],
+          },
+
+          {
+            model: "Samurai (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Scooty (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Scooty Pep Dlx (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Scooty Pep (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Scooty Pep+ (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Shaolin (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Shogan (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Spectra (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Sport (BS6) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Sport (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Star City (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Star City+ (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Star City 110 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Star Sports (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Streak (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Teenz (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor Edge (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor Edge (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor GLX125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor GLX125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor GX (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Victor Premium (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Wego (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "XL 100 Comfort (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "XL 100 Heavy Duty (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Zest 110 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+        ]
+      },
+
+      {
+        brand:"YAMAHA",
+        vehicles:[
+
+          {
+            model: "ACE (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "ALBA106 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "ALBA106 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Alpha (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Crux (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Crux R (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Cygnus RayZr (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "Cygnus RayZr (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "Enticer (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Enticer (New) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ7", "XLTZ7"],
+              },
+            ],
+          },
+
+          {
+            model: "Enticer (Old) (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX90", "XL9L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fascino (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fascino (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fazer (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fazer 150 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fazer Dlx (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Fazer F1 2.0 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "FZ (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "FZ (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "FZ F1 2.0 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "FZ-S (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "FZ16 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Gladiator Dlx (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Gladiator Dx (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Gladiator ss125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Gladiator ss125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Gladiator STd (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Liberog5 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "R15 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "Ray (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Ray Z (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "RXG (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "RXZ (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "RZX (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "RZX135 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "Saluto (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "Saluto (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "SS125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "SZ-RR ",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+
+          {
+            model: "SZ-S",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "SZR (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "SZX (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "YBR110 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "YBR125 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX50", "XL5L-B"],
+              },
+            ],
+          },
+
+          {
+            model: "YBX125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "YD125 (KS)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTX2.5", "XL2.5"],
+              },
+            ],
+          },
+
+          {
+            model: "YZF R1 2.0 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "YZF R15 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "YZF R15 2.0 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+
+          {
+            model: "YZF R15 3.0 (ES)",
+            type: [
+              {
+                type:"petrol",
+                battery: ["BTZ5", "XLTZ5"],
+              },
+            ],
+          },
+          
+        
+        ]
+      }
 
     ],
   },
